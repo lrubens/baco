@@ -50,6 +50,7 @@ def optimize(settings_file: Union[str, Dict], black_box_function: Optional[Calla
     if settings["optimization_method"] in ["bayesian_optimization"]:
         from baco.bo import bo
         data_array = bo.main(settings, black_box_function=black_box_function)
+        print(data_array)
 
     elif settings["optimization_method"] == "exhaustive":
         from baco.other import exhaustive

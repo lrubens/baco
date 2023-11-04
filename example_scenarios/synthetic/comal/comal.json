@@ -1,0 +1,16 @@
+{
+    "application_name": "comal",
+    "optimization_objectives": ["compute_time"],
+    "optimization_iterations": 3,
+    "acquisition_function": "EI",
+    "optimization_method": "bayesian_optimization",
+    "input_parameters" : {
+        "par_factor": {
+            "parameter_type" : "ordinal",
+            "values" : [2, 4, 8, 16, 32],
+            "parameter_default" : 16
+        }
+    },
+    "predict_noiseless": true,
+    "log_file": "taco.log"
+}

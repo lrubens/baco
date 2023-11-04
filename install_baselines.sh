@@ -1,22 +1,22 @@
 mkdir extra_packages
 cd extra_packages
 
-git clone https://github.com/ytopt-team/ConfigSpace.git
+git clone https://github.com/ytopt-team/ConfigSpace.git --depth=1
 cd ConfigSpace
 pip install -e .
 cd ..
 
-git clone https://github.com/ytopt-team/scikit-optimize.git
+git clone https://github.com/ytopt-team/scikit-optimize.git --depth=1
 cd scikit-optimize
 pip install -e .
 cd ..
 
-git clone -b version1 https://github.com/ytopt-team/autotune.git
+git clone -b version1 https://github.com/ytopt-team/autotune.git --depth=1
 cd autotune
 pip install -e . 
 cd ..
 
-git clone -b main https://github.com/ytopt-team/ytopt.git
+git clone -b main https://github.com/ytopt-team/ytopt.git --depth=1
 cd ytopt
 pip install -e .
 cd ..

@@ -152,6 +152,7 @@ class Space:
                 self.parameter_python_types.append("float")
 
             elif param_type == "integer":
+                print(param["values"])
                 param_min, param_max = param["values"]
                 if param_min > param_max:
                     param_min, param_max = (

@@ -1,0 +1,2 @@
+[console_scripts]
+baco = baco.run:main
