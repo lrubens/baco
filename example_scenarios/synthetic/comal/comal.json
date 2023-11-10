@@ -1,16 +1,26 @@
 {
     "application_name": "comal",
     "optimization_objectives": ["compute_time"],
-    "optimization_iterations": 3,
-    "acquisition_function": "EI",
+    "optimization_iterations": 20,
     "optimization_method": "bayesian_optimization",
     "input_parameters" : {
         "par_factor": {
             "parameter_type" : "ordinal",
-            "values" : [2, 4, 8, 16, 32],
+            "values" : [4, 8, 16, 32, 64],
             "parameter_default" : 16
+        }
+        ,
+        "fiberlookup_latency": {
+            "parameter_type" : "integer",
+            "values" : [1, 25],
+            "parameter_default" : 6
+        },
+        "fiberlookup_ii": {
+            "parameter_type" : "integer",
+            "values" : [1, 25],
+            "parameter_default" : 6
         }
     },
     "predict_noiseless": true,
-    "log_file": "taco.log"
+    "log_file": "mha.log"
 }
