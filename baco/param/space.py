@@ -60,43 +60,52 @@ class Space:
 
         self.parse_input_parameters(settings["input_parameters"])
 
-        self.parameter_names = [parameter.name for parameter in self.parameters]
-        self.parameter_indices = {parameter_name: i for i, parameter_name in enumerate(self.parameter_names)}
+        self.parameter_names = [
+            parameter.name for parameter in self.parameters]
+        self.parameter_indices = {parameter_name: i for i,
+                                  parameter_name in enumerate(self.parameter_names)}
         self.dimension = len(self.parameters)
         self.has_real_parameters = ("real" in self.parameter_types)
-        self.only_real_parameters = (len(self.real_parameters) == self.dimension)
+        self.only_real_parameters = (
+            len(self.real_parameters) == self.dimension)
         if self.has_real_parameters:
             self.size = np.inf
         else:
             self.size = 1
             for parameter in self.parameters:
                 self.size *= parameter.get_size()
-        self.input_output_parameter_names = self.parameter_names + self.metric_names + ([self.feasible_output_name] if self.enable_feasible_predictor else [])
+        self.input_output_parameter_names = self.parameter_names + self.metric_names + \
+            ([self.feasible_output_name] if self.enable_feasible_predictor else [])
         self.all_names = self.input_output_parameter_names + ["timestamp"]
         self.normalize_inputs = settings["normalize_inputs"]
         self.normalize_priors = True
 
         if self.conditional_space:
             cot_order, tree_orders = self.get_cot_order()
-            self.chain_of_trees = ChainOfTrees(cot_order, len(cot_order) == self.dimension)
+            self.chain_of_trees = ChainOfTrees(
+                cot_order, len(cot_order) == self.dimension)
             self.create_chain_of_trees(tree_orders)
 
             # cot_parameters are the constraints which are part of the chain of trees. Floats and variables which have dependencies with float parameters are not.
-            self.cot_parameters = [self.parameters[i] for i in range(self.dimension) if i in cot_order]
-            self.non_cot_parameters = [self.parameters[i] for i in range(self.dimension) if i not in cot_order]
-            cot_ordered_names = [p.name for p in self.cot_parameters] + [p.name for p in self.non_cot_parameters]
-            self.cot_remap = [cot_ordered_names.index(p.name) for p in self.parameters]
+            self.cot_parameters = [self.parameters[i]
+                                   for i in range(self.dimension) if i in cot_order]
+            self.non_cot_parameters = [self.parameters[i]
+                                       for i in range(self.dimension) if i not in cot_order]
+            cot_ordered_names = [
+                p.name for p in self.cot_parameters] + [p.name for p in self.non_cot_parameters]
+            self.cot_remap = [cot_ordered_names.index(
+                p.name) for p in self.parameters]
             self.non_cot_constraints = []
             for p in self.non_cot_parameters:
                 if p.constraints is not None:
                     self.non_cot_constraints.extend(p.constraints)
 
         self.use_gradient_descent = (
-                settings["models"]["model"] == "gaussian_process"
-                and not self.enable_feasible_predictor
-                and not self.conditional_space
-                and not settings["GP_model"] == "gpy"
-                and self.has_real_parameters
+            settings["models"]["model"] == "gaussian_process"
+            and not self.enable_feasible_predictor
+            and not self.conditional_space
+            and not settings["GP_model"] == "gpy"
+            and self.has_real_parameters
         )
 
     def parse_input_parameters(self, input_parameters: Dict):
@@ -113,7 +122,8 @@ class Space:
                 param_default = param["parameter_default"]
             param_distribution = param["prior"]
             if param_distribution in ["gaussian"]:
-                param_distribution = (param_distribution, param["prior_parameters"])
+                param_distribution = (param_distribution,
+                                      param["prior_parameters"])
 
             param_constraints = None
             if "constraints" in param:
@@ -133,7 +143,8 @@ class Space:
 
             if param_type == "real":
                 param_min, param_max = param["values"]
-                param_discretization = np.linspace(param_min, param_max, num=10)
+                param_discretization = np.linspace(
+                    param_min, param_max, num=10)
                 param_obj = RealParameter(
                     name=param_name,
                     min_value=param_min,
@@ -232,11 +243,13 @@ class Space:
             tree = Tree()
             node = tree.get_root()
             build_time_start = time.time()
-            self.build_tree(tree, tree.get_root(), torch.Tensor([[float('nan')] * len(tree_order)]), tree_order, -1)
+            self.build_tree(tree, tree.get_root(), torch.Tensor(
+                [[float('nan')] * len(tree_order)]), tree_order, -1)
             sys.stdout.write_to_logfile(
                 f"time to build tree: {time.time() - build_time_start}\n"
             )
-            sys.stdout.write_to_logfile(f"number of leaves: {len(tree.leaves)}\n")
+            sys.stdout.write_to_logfile(
+                f"number of leaves: {len(tree.leaves)}\n")
             propagate_probabilities_time_start = time.time()
             node.propagate_probabilities(self)
             sys.stdout.write_to_logfile(
@@ -260,11 +273,13 @@ class Space:
         NOTE: configurations here are not ordered in the usual order but in the tree_order
         """
         child_parameter = self.parameters[tree_order[level + 1]]
-        tree_ordered_parameters = [self.parameters[p] for p in tree_order[:level + 1]]
+        tree_ordered_parameters = [self.parameters[p]
+                                   for p in tree_order[:level + 1]]
         possible_child_values = constraints.filter_conditional_values(
             child_parameter,
             child_parameter.constraints,
-            {p.name: v for p, v in zip(tree_ordered_parameters, self.convert(configuration[:, :level + 1], "internal", "original", parameters=tree_ordered_parameters)[0]) if not np.isnan(v)}
+            {p.name: v for p, v in zip(tree_ordered_parameters, self.convert(
+                configuration[:, :level + 1], "internal", "original", parameters=tree_ordered_parameters)[0]) if not np.isnan(v)}
         )
         if len(possible_child_values) > 0:
             if level == len(tree_order) - 2:
@@ -306,15 +321,18 @@ class Space:
                 else:
                     for dependency in dependencies:
                         if not isinstance(self.parameters[self.parameter_names.index(dependency)], RealParameter):
-                            dependency_graph.add_edge(dependency, parameter.name)
+                            dependency_graph.add_edge(
+                                dependency, parameter.name)
 
         topological_order = list(nx.topological_sort(dependency_graph))
         subgraphs = nx.connected_components(dependency_graph.to_undirected())
         cot_order = []
         tree_orders = []
         for subgraph in subgraphs:
-            cot_order += [self.parameter_names.index(p) for p in topological_order if p in subgraph]
-            tree_orders.append([self.parameter_names.index(p) for p in topological_order if p in subgraph])
+            cot_order += [self.parameter_names.index(p)
+                          for p in topological_order if p in subgraph]
+            tree_orders.append([self.parameter_names.index(p)
+                               for p in topological_order if p in subgraph])
         return cot_order, tree_orders
 
     def get_space(self) -> torch.Tensor:
@@ -390,7 +408,8 @@ class Space:
             raise Exception("Invalid from_type", from_type)
         rows = range(n_rows)
         columns = range(n_columns)
-        output = [[parameters[column].convert(data[row][column], from_type, to_type) for column in columns] for row in rows]
+        output = [[parameters[column].convert(
+            data[row][column], from_type, to_type) for column in columns] for row in rows]
         if to_type in ["internal", "01"]:
             output = torch.tensor(output, dtype=torch.float64)
 
@@ -411,7 +430,8 @@ class Space:
         # transform the torch tensor to dict of lists - needed for the numexpr package
         transformed_configurations = {parameter_name: parameter_values for parameter_name, parameter_values in
                                       zip(self.parameter_names, [list(i) for i in zip(*self.convert(configurations, "internal", "original"))])}
-        feasible = constraints.evaluate_constraints(self.constraints, transformed_configurations)
+        feasible = constraints.evaluate_constraints(
+            self.constraints, transformed_configurations)
 
         return feasible
 
@@ -426,7 +446,8 @@ class Space:
 
         feasible_list = []
         for configuration in configurations:
-            cot_ordered_configuration = self.chain_of_trees.to_cot_order(configuration)
+            cot_ordered_configuration = self.chain_of_trees.to_cot_order(
+                configuration)
             feasible = True
             idx = 0
             for tree in self.chain_of_trees.trees:
@@ -490,10 +511,13 @@ class Space:
 
         elif settings["baco_mode"]["mode"] == "client-server":
             print("Running on client-server mode.")
-            data_array = self.run_configurations_client_server(configurations, settings["output_data_file"])
+            data_array = self.run_configurations_client_server(
+                configurations, settings["output_data_file"])
 
-        if any(torch.isnan(data_array.metrics_array)) or any(torch.isnan(data_array.metrics_array)):
-            raise Exception("NaN values in output from blackbox function. Exiting.")
+        print(data_array.metrics_array)
+        # if any(torch.isnan(data_array.metrics_array)) or any(torch.isnan(data_array.metrics_array)):
+        #     raise Exception(
+        #         "NaN values in output from blackbox function. Exiting.")
 
         return data_array
 
@@ -512,7 +536,8 @@ class Space:
         print("Communication protocol: sending message...")
 
         # Write to stdout
-        sys.stdout.write_protocol("Request %d\n" % len(configurations))  # From the BaCO/interacting system protocol
+        # From the BaCO/interacting system protocol
+        sys.stdout.write_protocol("Request %d\n" % len(configurations))
         str_header = ""
         for parameter_name in list(self.parameter_names):
             str_header += str(parameter_name) + ","
@@ -537,29 +562,35 @@ class Space:
                 print("The input-ouput parameters specified in the json are: %s"
                       % str(self.all_names))
                 exit()
-            parameters_index_reference[header] = parameters_header.index(header)
+            parameters_index_reference[header] = parameters_header.index(
+                header)
         parameters_data = []
         for conf_index in range(configurations.shape[0]):
             line = sys.stdin.readline()
             sys.stdout.write(line)
             # same as .split(','') but don't split on commas within parenthesis to allow for permutations
-            parameters_data.append([x.strip() for x in re.split(r",(?![^(]*[)])", line)])
+            parameters_data.append([x.strip()
+                                   for x in re.split(r",(?![^(]*[)])", line)])
         try:
-            metric_indices = [parameters_header.index(name) for name in self.metric_names]
+            metric_indices = [parameters_header.index(
+                name) for name in self.metric_names]
             metrics = []
             feasible = []
             for row in parameters_data:
                 metrics.append([float(row[m]) for m in metric_indices])
                 if self.enable_feasible_predictor:
-                    feasible.append((True if row[parameters_header.index(self.feasible_output_name)] == str(self.true_value) else False))
+                    feasible.append((True if row[parameters_header.index(
+                        self.feasible_output_name)] == str(self.true_value) else False))
             metrics = torch.tensor(metrics)
             feasible = torch.tensor(feasible)
         except ValueError as ve:
             print("Failed to parse received message:")
             print(ve)
             raise SystemError
-        timestamps = torch.tensor([self.current_milli_time()] * len(configurations))
-        new_data_array = DataArray(configurations, metrics, timestamps, feasible)
+        timestamps = torch.tensor(
+            [self.current_milli_time()] * len(configurations))
+        new_data_array = DataArray(
+            configurations, metrics, timestamps, feasible)
         write_data_array(self, new_data_array, output_data_file)
         return new_data_array
 
@@ -579,11 +610,13 @@ class Space:
             - beginning_of_time: time from the beginning of the BaCO design space exploration.
             - output_data_file: path to the output file.
         """
-        original_configurations = self.convert(configurations, "internal", "original")
+        original_configurations = self.convert(
+            configurations, "internal", "original")
         objective_values = []
         timestamps = []
         for original_configuration in original_configurations:
-            output = black_box_function({name: value for name, value in zip(self.parameter_names, original_configuration)})
+            output = black_box_function({name: value for name, value in zip(
+                self.parameter_names, original_configuration)})
             if isinstance(output, tuple):
                 output = list(output)
             if not (type(output) is list or type(output) is dict):
@@ -592,36 +625,45 @@ class Space:
             timestamps.append(self.current_milli_time() - beginning_of_time)
 
         output_names = self.metric_names + \
-                       ([self.feasible_output_name] if self.enable_feasible_predictor else []) + \
-                       (["std_estimate"] if self.settings["GP_model"] in ["botorch_fixed", "botorch_heteroskedastic"] else [])
+            ([self.feasible_output_name] if self.enable_feasible_predictor else []) + \
+            (["std_estimate"] if self.settings["GP_model"] in [
+                "botorch_fixed", "botorch_heteroskedastic"] else [])
 
         if type(objective_values[0]) is dict:
             for m in objective_values[0].keys():
                 if m not in output_names:
-                    raise Exception(f"The black box function return metric {m} which is not in the json file.")
+                    raise Exception(
+                        f"The black box function return metric {m} which is not in the json file.")
             for m in output_names:
                 if m not in objective_values[0].keys():
-                    raise Exception(f"The black box function should return metric {m} but didn't.")
-            objective_values = [[objective_dict[metric] for metric in output_names] for objective_dict in objective_values]
+                    raise Exception(
+                        f"The black box function should return metric {m} but didn't.")
+            objective_values = [[objective_dict[metric] for metric in output_names]
+                                for objective_dict in objective_values]
         else:
             if len(objective_values[0]) != len(output_names):
-                raise Exception(f"The black box function should return {len(output_names)} metrics but returned {len(objective_values[0])}.")
+                raise Exception(
+                    f"The black box function should return {len(output_names)} metrics but returned {len(objective_values[0])}.")
 
-        metrics_array = torch.tensor(objective_values)[:, :len(self.metric_names)]
+        metrics_array = torch.tensor(objective_values)[
+            :, :len(self.metric_names)]
         shift = 0
         if self.enable_feasible_predictor:
-            feasible_array = torch.tensor(objective_values)[:, len(self.metric_names)].to(dtype=torch.bool)
+            feasible_array = torch.tensor(objective_values)[
+                :, len(self.metric_names)].to(dtype=torch.bool)
             shift += 1
         else:
             feasible_array = torch.Tensor()
         if self.settings["GP_model"] in ["botorch_fixed", "botorch_heteroskedastic"]:
-            std_estimate_array = torch.tensor(objective_values)[:, len(self.metric_names) + shift]
+            std_estimate_array = torch.tensor(objective_values)[
+                :, len(self.metric_names) + shift]
             shift += 1
         else:
             std_estimate_array = torch.Tensor()
 
         timestamp_array = torch.tensor(timestamps)
-        data_array = DataArray(configurations, metrics_array, timestamp_array, feasible_array, std_estimate_array)
+        data_array = DataArray(configurations, metrics_array,
+                               timestamp_array, feasible_array, std_estimate_array)
         write_data_array(self, data_array, output_data_file)
         return data_array
 
@@ -636,16 +678,16 @@ class Space:
         for key in self.all_names:
             keys += str(key) + ","
         print(keys[:-1])
-        configurations = self.convert(data_array.parameters_array, "internal", "string")
+        configurations = self.convert(
+            data_array.parameters_array, "internal", "string")
         for i in range(len(configurations)):
             print(*(
-                    configurations[i] +
-                    data_array.metrics_array[i].tolist() +
-                    ([data_array.feasible_array[i].item()] if data_array.feasible_array.tolist() else []) +
-                    [data_array.timestamp_array[i].item()]
+                configurations[i] +
+                data_array.metrics_array[i].tolist() +
+                ([data_array.feasible_array[i].item()] if data_array.feasible_array.tolist() else []) +
+                [data_array.timestamp_array[i].item()]
             ), sep=",")
         print()
-
 
     @staticmethod
     def current_milli_time():
@@ -677,14 +719,16 @@ def write_data_array(param_space, data_array, filename):
     try:
         with open(filename, "a") as f:
             w = csv.writer(f)
-            configurations = param_space.convert(data_array.parameters_array, "internal", "string")
+            configurations = param_space.convert(
+                data_array.parameters_array, "internal", "string")
             for i in range(len(configurations)):
                 w.writerow(
                     configurations[i] +
                     [m.item() for m in data_array.metrics_array[i]] +
                     ([data_array.feasible_array[i].item()] if param_space.enable_feasible_predictor else []) +
                     [data_array.timestamp_array[i].item()] +
-                    ([data_array.std_estimate[i].item()] if param_space.settings["GP_model"] in ["botorch_fixed", "botorch_heteroskedastic"] else [])
+                    ([data_array.std_estimate[i].item()] if param_space.settings["GP_model"] in [
+                     "botorch_fixed", "botorch_heteroskedastic"] else [])
                 )
     except Exception as e:
         print(e)

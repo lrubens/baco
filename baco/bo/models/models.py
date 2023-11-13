@@ -60,7 +60,8 @@ def generate_mono_output_regression_models(
     """
     start_time = time.time()
 
-    X, Y, parametrization_names = transform_data(settings, data_array, param_space, objective_means, objective_stds)
+    X, Y, parametrization_names = transform_data(
+        settings, data_array, param_space, objective_means, objective_stds)
 
     models = []
     hyperparameters = None
@@ -78,20 +79,24 @@ def generate_mono_output_regression_models(
                 model = GpGpytorch(settings, X, y)
             elif settings["GP_model"] == "botorch_fixed":
                 from baco.bo.models.gpbotorch import GpBotorchFixed
-                std_estimate = transform_estimate(settings, data_array.std_estimate, objective_means, objective_stds)
+                std_estimate = transform_estimate(
+                    settings, data_array.std_estimate, objective_means, objective_stds)
                 model = GpBotorchFixed(settings, X, y, std_estimate)
             elif settings["GP_model"] == "botorch_heteroskedastic":
                 from baco.bo.models.gpbotorch import GpBotorchHeteroskedastic
-                std_estimate = transform_estimate(settings, data_array.std_estimate, objective_means, objective_stds)
+                std_estimate = transform_estimate(
+                    settings, data_array.std_estimate, objective_means, objective_stds)
                 model = GpBotorchHeteroskedastic(settings, X, y, std_estimate)
             else:
-                raise Exception("Unrecognized GP model type:", settings["GP_model"])
+                raise Exception("Unrecognized GP model type:",
+                                settings["GP_model"])
             if reoptimize:
                 hyperparameters = model.fit(settings, previous_hyperparameters)
                 if hyperparameters is None:
                     return None, None
             else:
-                model.covar_module.base_kernel.lengthscale = tuple(previous_hyperparameters["lengthscale"])
+                model.covar_module.base_kernel.lengthscale = tuple(
+                    previous_hyperparameters["lengthscale"])
                 model.covar_module.outputscale = previous_hyperparameters["variance"]
                 model.likelihood.noise_covar.noise = previous_hyperparameters["noise"]
 
@@ -106,10 +111,12 @@ def generate_mono_output_regression_models(
             )
             model.fit_rf(X, y)
         else:
-            raise Exception("Unrecognized model type:", settings["models"]["model"])
+            raise Exception("Unrecognized model type:",
+                            settings["models"]["model"])
 
         models.append(model)
-    sys.stdout.write_to_logfile(("End of training - Time %10.2f sec\n" % (time.time() - start_time)))
+    sys.stdout.write_to_logfile(
+        ("End of training - Time %10.2f sec\n" % (time.time() - start_time)))
     return models, hyperparameters
 
 
@@ -129,7 +136,8 @@ def generate_classification_model(
         - the classifier
     """
     start_time = datetime.datetime.now()
-    X, names = preprocess_parameters_array(data_array.parameters_array, param_space)
+    X, names = preprocess_parameters_array(
+        data_array.parameters_array, param_space)
     classifier = RFClassificationModel(
         settings,
         param_space,
@@ -137,7 +145,8 @@ def generate_classification_model(
         data_array.feasible_array,
     )
 
-    sys.stdout.write_to_logfile("End of training - Time %10.2f sec\n" % ((datetime.datetime.now() - start_time).total_seconds()))
+    sys.stdout.write_to_logfile("End of training - Time %10.2f sec\n" %
+                                ((datetime.datetime.now() - start_time).total_seconds()))
     return classifier
 
 
