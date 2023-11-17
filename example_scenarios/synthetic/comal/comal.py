@@ -26,8 +26,8 @@ def mha(X):
     print(fiberlookup_ii)
     print(fiberlookup_latency)
 
-    # rust_binary = "/home/rubensl/Documents/repos/comal/target/release/comal"
-    rust_binary = "/home/rubensl/comal/target/release/comal"
+    rust_binary = "/home/rubensl/Documents/repos/comal/target/release/comal"
+    # rust_binary = "/home/rubensl/comal/target/release/comal"
     dataset_name = "tensor4_mha256"
 
     with open(home + "/sam_config.toml", "r") as f:

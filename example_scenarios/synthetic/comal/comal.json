@@ -4,7 +4,7 @@
                                 "repeat_count", "reduce_count", "alu_count", "repsiggen_count", "array_count"],
     "design_of_experiment": {
         "doe_type": "random sampling",
-        "number_of_samples": 3
+        "number_of_samples": 5
     },
     "input_parameters" : {
         "par_factor": {
@@ -34,8 +34,7 @@
     },
     "allow_duplicate_samples": false,
     "acquisition_function": "EI",
-    "GP_model" : "gpy",
-    "optimization_iterations": 10,
+    "optimization_iterations": 60,
     "epsilon_greedy_threshold": 0,
     "multistart_hyperparameter_optimization": true,
     "hyperparameter_optimization_iterations": 5,
