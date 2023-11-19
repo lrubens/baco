@@ -40,7 +40,7 @@ def mha(X):
     # print(fiberlookup_initial)
     # print(fiberlookup_latency)
 
-    rust_binary = "/home/rubensl/Documents/repos/comal/target/release/deps/comal-3d4278ca598b10f3"
+    rust_binary = "/home/rubensl/Documents/repos/comal/target/release/deps/comal-eea9c28bcdb18380"
 
     with open(home + "/sam_config.toml", "r") as f:
         config = toml.load(f)
@@ -74,10 +74,17 @@ def mha(X):
 
     proc = subprocess.run(cmd, universal_newlines=True, stdout=subprocess.PIPE)
 
+    print(proc)
+
     diff_lst = []
-    for item in proc.stdout.split("\n"):
-        if item.startswith("Diff"):
-            diff_lst.append(abs(int(item.split("Diff: ")[1])))
+    for line in proc.stdout.split("\n"):
+        if not line.startswith("test templates"):
+            continue
+        # print(line)
+        item = line.split("... ")[1]
+        # print(item)
+
+        diff_lst.append(abs(int(item.split("Diff: ")[1])))
 
     print(diff_lst)
     avg_diff = 0.0
@@ -85,7 +92,7 @@ def mha(X):
         # if i == 4:
         #     break
         avg_diff += float(diff)
-    avg_diff /= 8
+    avg_diff /= len(diff_lst)
     print("Avg diff: ", avg_diff)
     global best_diff
     if avg_diff < best_diff:
