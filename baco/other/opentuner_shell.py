@@ -29,7 +29,7 @@ def create_namespace(settings):
     args.no_dups = False
     args.par = "brr"
     args.parallel_compile = False
-    args.parallelism = 4
+    args.parallelism = 1
     args.pipelining = 0
     args.print_params = False
     args.print_search_space_size = False
@@ -102,6 +102,7 @@ class OpentunerShell(MeasurementInterface):
         parameter_idx = 0
         for tree in self.chain_of_trees.trees:
             node = tree.root
+            print(self.parameter_indices)
             while node.children:
                 n_children = len(node.children)
                 child_index, node = [(i, n) for i, n in enumerate(node.children) if n.value == cfg[self.parameter_indices[parameter_idx]]][0]
@@ -192,4 +193,4 @@ class OpentunerShell(MeasurementInterface):
         """
         called at the end of autotuning with the best resultsdb.models.Configuration
         """
-        pass
+        print("Best config: ", configuration)

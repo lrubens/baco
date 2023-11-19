@@ -135,24 +135,24 @@ def ei(
         print(f_stds)
         raise e
     scalarized_ei = (objective_ei @ objective_weights)
-    if verbose and objective_ei.shape[0] == 1:
-        sys.stdout.write_to_logfile(
-            f"obj mean:{objective_means.squeeze().item()}  " +
-            f"obj std:{objective_stds.squeeze().item()} \n"
-        )
-        sys.stdout.write_to_logfile(
-            f"f*:{' '.join(str(x.item()) for x in normalized_best_values)}  " +
-            f"mu:{' '.join(str(x.item()) for x in f_means.squeeze(0))}  " +
-            f"sigma:{' '.join(str(x.item()) for x in f_stds.squeeze(0))}  " +
-            f"feasibility:{feasibility_indicator.item()}  " +
-            f"p1:{' '.join(str(x.item()) for x in ((normalized_best_values - f_means - xi) * normal.cdf(v)).squeeze(0))} " +
-            f"p2:{' '.join(str(x.item()) for x in (f_stds * torch.exp(normal.log_prob(v))).squeeze(0))}  " +
-            f"alpha:{' '.join(str(x.item()) for x in objective_ei.squeeze(0))}  " +
-            f"w:{' '.join(str(x) for x in objective_weights)}\n"
-        )
-        sys.stdout.write_to_logfile(
-            f"log EI value: {torch.log10(scalarized_ei).item()}\n"
-        )
+    # if verbose and objective_ei.shape[0] == 1:
+    #     sys.stdout.write_to_logfile(
+    #         f"obj mean:{objective_means.squeeze().item()}  " +
+    #         f"obj std:{objective_stds.squeeze().item()} \n"
+    #     )
+    #     sys.stdout.write_to_logfile(
+    #         f"f*:{' '.join(str(x.item()) for x in normalized_best_values)}  " +
+    #         f"mu:{' '.join(str(x.item()) for x in f_means.squeeze(0))}  " +
+    #         f"sigma:{' '.join(str(x.item()) for x in f_stds.squeeze(0))}  " +
+    #         f"feasibility:{feasibility_indicator.item()}  " +
+    #         f"p1:{' '.join(str(x.item()) for x in ((normalized_best_values - f_means - xi) * normal.cdf(v)).squeeze(0))} " +
+    #         f"p2:{' '.join(str(x.item()) for x in (f_stds * torch.exp(normal.log_prob(v))).squeeze(0))}  " +
+    #         f"alpha:{' '.join(str(x.item()) for x in objective_ei.squeeze(0))}  " +
+    #         f"w:{' '.join(str(x) for x in objective_weights)}\n"
+    #     )
+    #     sys.stdout.write_to_logfile(
+    #         f"log EI value: {torch.log10(scalarized_ei).item()}\n"
+    #     )
     if settings["log_acq_value"]:
         acq_val = torch.log10(
                 scalarized_ei

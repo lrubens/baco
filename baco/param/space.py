@@ -55,7 +55,7 @@ class Space:
         self.categorical_parameters = []
         self.permutation_parameters = []
         self.real_parameters = []
-        self.conditional_space = False
+        self.conditional_space = True
         self.constraints = []
 
         self.parse_input_parameters(settings["input_parameters"])
