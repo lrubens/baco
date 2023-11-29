@@ -4545,3 +4545,1498 @@ Time elapsed:  188.85248184204102
 Time elapsed:  202.42986035346985
 ['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha', '--par_factor', '32']
 
+application_name: comal
+optimization_objectives: ['compute_time']
+optimization_iterations: 3
+acquisition_function: EI
+optimization_method: bayesian_optimization
+input_parameters: {'par_factor': {'parameter_type': 'ordinal', 'values': [2, 4, 8, 16, 32], 'parameter_default': 16, 'prior': 'uniform', 'prior_parameters': []}}
+predict_noiseless: True
+log_file: ./taco.log
+acquisition_function_optimizer: local_search
+allow_duplicate_samples: True
+design_of_experiment: {'doe_type': 'random sampling', 'number_of_samples': 10, 'allow_repetitions': False}
+epsilon_greedy_threshold: 0
+evolution_crossover: False
+evolution_generations: 150
+evolution_population_size: 50
+exploration_augmentation: 0.0001
+feasible_output: {'false_value': 'False', 'name': 'Valid', 'true_value': 'True', 'enable_feasible_predictor': False, 'feasibility_threshold': 0.1}
+baco_mode: {'mode': 'default'}
+lengthscale_prior: {'name': 'none', 'parameters': [1.3, 0.1]}
+local_search_from_best: True
+local_search_improvement_threshold: 0
+local_search_random_points: 30000
+local_search_starting_points: 10
+local_search_step_size: 0.03
+log_acq_value: False
+log_transform_output: False
+model_good_quantile: 0.05
+model_weight: 10
+models: {'model': 'gaussian_process', 'bootstrap': True, 'max_features': 0.5, 'min_samples_split': 2, 'number_of_trees': 200, 'use_all_data_to_fit_mean': False, 'use_all_data_to_fit_variance': False}
+multistart_hyperparameter_optimization: False
+hyperparameter_optimization_iterations: 5
+GP_model: botorch
+mutation_rate: 1
+naive_cot_rs: False
+noise: True
+noise_prior: {'name': 'none'}
+normalize_inputs: True
+number_of_repetitions: 1
+objective_value_target: -9999
+output_data_file: output_samples.csv
+outputscale_prior: {'name': 'none'}
+prior_estimation_file: samples.csv
+prior_estimation_quantile: 0.1
+prior_floor: 1e-06
+prior_limit_estimation_points: 10000
+regularize_evolution: False
+reoptimise_hyperparameters_interval: 1
+resume_optimization: False
+resume_optimization_file: output_samples.csv
+reuse_gp_hyperparameters: False
+run_directory: .
+standardize_objectives: True
+time_budget: -1
+timestamp: Timestamp
+use_STGP: True
+
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha', '--par_factor', '16']
+
+Time elapsed:  203.7305610179901
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha', '--par_factor', '2']
+
+Time elapsed:  349.67603302001953
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha', '--par_factor', '4']
+
+application_name: comal
+optimization_objectives: ['compute_time']
+optimization_iterations: 3
+acquisition_function: EI
+optimization_method: bayesian_optimization
+input_parameters: {'par_factor': {'parameter_type': 'ordinal', 'values': [2, 4, 8, 16, 32], 'parameter_default': 16, 'prior': 'uniform', 'prior_parameters': []}}
+predict_noiseless: True
+log_file: ./taco.log
+acquisition_function_optimizer: local_search
+allow_duplicate_samples: True
+design_of_experiment: {'doe_type': 'random sampling', 'number_of_samples': 10, 'allow_repetitions': False}
+epsilon_greedy_threshold: 0
+evolution_crossover: False
+evolution_generations: 150
+evolution_population_size: 50
+exploration_augmentation: 0.0001
+feasible_output: {'false_value': 'False', 'name': 'Valid', 'true_value': 'True', 'enable_feasible_predictor': False, 'feasibility_threshold': 0.1}
+baco_mode: {'mode': 'default'}
+lengthscale_prior: {'name': 'none', 'parameters': [1.3, 0.1]}
+local_search_from_best: True
+local_search_improvement_threshold: 0
+local_search_random_points: 30000
+local_search_starting_points: 10
+local_search_step_size: 0.03
+log_acq_value: False
+log_transform_output: False
+model_good_quantile: 0.05
+model_weight: 10
+models: {'model': 'gaussian_process', 'bootstrap': True, 'max_features': 0.5, 'min_samples_split': 2, 'number_of_trees': 200, 'use_all_data_to_fit_mean': False, 'use_all_data_to_fit_variance': False}
+multistart_hyperparameter_optimization: False
+hyperparameter_optimization_iterations: 5
+GP_model: botorch
+mutation_rate: 1
+naive_cot_rs: False
+noise: True
+noise_prior: {'name': 'none'}
+normalize_inputs: True
+number_of_repetitions: 1
+objective_value_target: -9999
+output_data_file: output_samples.csv
+outputscale_prior: {'name': 'none'}
+prior_estimation_file: samples.csv
+prior_estimation_quantile: 0.1
+prior_floor: 1e-06
+prior_limit_estimation_points: 10000
+regularize_evolution: False
+reoptimise_hyperparameters_interval: 1
+resume_optimization: False
+resume_optimization_file: output_samples.csv
+reuse_gp_hyperparameters: False
+run_directory: .
+standardize_objectives: True
+time_budget: -1
+timestamp: Timestamp
+use_STGP: True
+
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha', '--par_factor', '16']
+
+application_name: comal
+optimization_objectives: ['compute_time']
+optimization_iterations: 3
+acquisition_function: EI
+optimization_method: bayesian_optimization
+input_parameters: {'par_factor': {'parameter_type': 'ordinal', 'values': [2, 4, 8, 16, 32], 'parameter_default': 16, 'prior': 'uniform', 'prior_parameters': []}}
+predict_noiseless: True
+log_file: ./taco.log
+acquisition_function_optimizer: local_search
+allow_duplicate_samples: True
+design_of_experiment: {'doe_type': 'random sampling', 'number_of_samples': 10, 'allow_repetitions': False}
+epsilon_greedy_threshold: 0
+evolution_crossover: False
+evolution_generations: 150
+evolution_population_size: 50
+exploration_augmentation: 0.0001
+feasible_output: {'false_value': 'False', 'name': 'Valid', 'true_value': 'True', 'enable_feasible_predictor': False, 'feasibility_threshold': 0.1}
+baco_mode: {'mode': 'default'}
+lengthscale_prior: {'name': 'none', 'parameters': [1.3, 0.1]}
+local_search_from_best: True
+local_search_improvement_threshold: 0
+local_search_random_points: 30000
+local_search_starting_points: 10
+local_search_step_size: 0.03
+log_acq_value: False
+log_transform_output: False
+model_good_quantile: 0.05
+model_weight: 10
+models: {'model': 'gaussian_process', 'bootstrap': True, 'max_features': 0.5, 'min_samples_split': 2, 'number_of_trees': 200, 'use_all_data_to_fit_mean': False, 'use_all_data_to_fit_variance': False}
+multistart_hyperparameter_optimization: False
+hyperparameter_optimization_iterations: 5
+GP_model: botorch
+mutation_rate: 1
+naive_cot_rs: False
+noise: True
+noise_prior: {'name': 'none'}
+normalize_inputs: True
+number_of_repetitions: 1
+objective_value_target: -9999
+output_data_file: output_samples.csv
+outputscale_prior: {'name': 'none'}
+prior_estimation_file: samples.csv
+prior_estimation_quantile: 0.1
+prior_floor: 1e-06
+prior_limit_estimation_points: 10000
+regularize_evolution: False
+reoptimise_hyperparameters_interval: 1
+resume_optimization: False
+resume_optimization_file: output_samples.csv
+reuse_gp_hyperparameters: False
+run_directory: .
+standardize_objectives: True
+time_budget: -1
+timestamp: Timestamp
+use_STGP: True
+
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha64', '--par_factor', '16']
+
+Time elapsed:  0.24023914337158203
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha64', '--par_factor', '2']
+
+Time elapsed:  0.27108168601989746
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha64', '--par_factor', '4']
+
+Time elapsed:  0.3383357524871826
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha64', '--par_factor', '8']
+
+Time elapsed:  0.14605498313903809
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha64', '--par_factor', '16']
+
+Time elapsed:  0.2527964115142822
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha64', '--par_factor', '32']
+
+Time elapsed:  0.44622325897216797
+par_factor,compute_time,timestamp
+16,0.24023914337158203,240
+2,0.27108168601989746,512
+4,0.3383357524871826,850
+8,0.14605498313903809,997
+16,0.2527964115142822,1250
+32,0.44622325897216797,1696
+
+
+End of doe/resume phase, the number of evaluated configurations is: 10
+
+End of DoE - Time     1.7005 sec
+Starting optimization iteration: 1 sample no: 6
+lengthscales:
+0.326181959058077
+kernel variance: 1.9051302451814034
+noise variance: 0.37164032558182425
+End of training - Time       0.18 sec
+Model fitting time     0.1841 sec
+Total RS time     0.0001 sec
+Optimization function time     0.0028 sec
+Starting local search on configuration: <8.0> with acq. val. 0.01315759839062168
+Best neighbour: <8.0> with acq. val. 0.01315759839062177
+obj mean:0.2824552059173584  obj std:0.1013299822807312 
+f*:-1.3460993766784668  mu:-0.676762543152154  sigma:0.446894343943853  feasibility:1.0  p1:-0.0448989891458183 p2:0.05805658753643998  alpha:0.01315759839062168  w:tensor(1., dtype=torch.float64)
+log EI value: -1.8808233737070899
+Local minimum found!
+Starting local search on configuration: <16.0> with acq. val. 0.0008999891814551802
+Best neighbour: <8.0> with acq. val. 0.013157598390621715
+Best neighbour: <8.0> with acq. val. 0.01315759839062177
+obj mean:0.2824552059173584  obj std:0.1013299822807312 
+f*:-1.3460993766784668  mu:-0.676762543152154  sigma:0.446894343943853  feasibility:1.0  p1:-0.0448989891458183 p2:0.05805658753643998  alpha:0.01315759839062168  w:tensor(1., dtype=torch.float64)
+log EI value: -1.8808233737070899
+Local minimum found!
+Starting local search on configuration: <4.0> with acq. val. 5.905789587189994e-05
+Best neighbour: <8.0> with acq. val. 0.01315759839062168
+Best neighbour: <8.0> with acq. val. 0.01315759839062177
+obj mean:0.2824552059173584  obj std:0.1013299822807312 
+f*:-1.3460993766784668  mu:-0.676762543152154  sigma:0.446894343943853  feasibility:1.0  p1:-0.0448989891458183 p2:0.05805658753643998  alpha:0.01315759839062168  w:tensor(1., dtype=torch.float64)
+log EI value: -1.8808233737070899
+Local minimum found!
+Starting local search on configuration: <2.0> with acq. val. 5.233247238172758e-05
+Best neighbour: <4.0> with acq. val. 5.905789587190753e-05
+Best neighbour: <8.0> with acq. val. 0.01315759839062168
+Best neighbour: <8.0> with acq. val. 0.01315759839062177
+obj mean:0.2824552059173584  obj std:0.1013299822807312 
+f*:-1.3460993766784668  mu:-0.676762543152154  sigma:0.446894343943853  feasibility:1.0  p1:-0.0448989891458183 p2:0.05805658753643998  alpha:0.01315759839062168  w:tensor(1., dtype=torch.float64)
+log EI value: -1.8808233737070899
+Local minimum found!
+Starting local search on configuration: <32.0> with acq. val. 3.5923541526210113e-08
+Best neighbour: <16.0> with acq. val. 0.0008999891814552054
+Best neighbour: <8.0> with acq. val. 0.013157598390621715
+Best neighbour: <8.0> with acq. val. 0.01315759839062177
+obj mean:0.2824552059173584  obj std:0.1013299822807312 
+f*:-1.3460993766784668  mu:-0.676762543152154  sigma:0.446894343943853  feasibility:1.0  p1:-0.0448989891458183 p2:0.05805658753643998  alpha:0.01315759839062168  w:tensor(1., dtype=torch.float64)
+log EI value: -1.8808233737070899
+Local minimum found!
+Starting local search on configuration: <8.0> with acq. val. 0.01315759839062168
+Best neighbour: <8.0> with acq. val. 0.01315759839062177
+obj mean:0.2824552059173584  obj std:0.1013299822807312 
+f*:-1.3460993766784668  mu:-0.676762543152154  sigma:0.446894343943853  feasibility:1.0  p1:-0.0448989891458183 p2:0.05805658753643998  alpha:0.01315759839062168  w:tensor(1., dtype=torch.float64)
+log EI value: -1.8808233737070899
+Local minimum found!
+Starting local search on configuration: <16.0> with acq. val. 0.0008999891814551802
+Best neighbour: <8.0> with acq. val. 0.013157598390621715
+Best neighbour: <8.0> with acq. val. 0.01315759839062177
+obj mean:0.2824552059173584  obj std:0.1013299822807312 
+f*:-1.3460993766784668  mu:-0.676762543152154  sigma:0.446894343943853  feasibility:1.0  p1:-0.0448989891458183 p2:0.05805658753643998  alpha:0.01315759839062168  w:tensor(1., dtype=torch.float64)
+log EI value: -1.8808233737070899
+Local minimum found!
+Starting local search on configuration: <16.0> with acq. val. 0.0008999891814551802
+Best neighbour: <8.0> with acq. val. 0.013157598390621715
+Best neighbour: <8.0> with acq. val. 0.01315759839062177
+obj mean:0.2824552059173584  obj std:0.1013299822807312 
+f*:-1.3460993766784668  mu:-0.676762543152154  sigma:0.446894343943853  feasibility:1.0  p1:-0.0448989891458183 p2:0.05805658753643998  alpha:0.01315759839062168  w:tensor(1., dtype=torch.float64)
+log EI value: -1.8808233737070899
+Local minimum found!
+Multi-start LS time     0.0622 sec
+Best found configuration: <8.0>
+obj mean:0.2824552059173584  obj std:0.1013299822807312 
+f*:-1.3460993766784668  mu:-0.676762543152154  sigma:0.446894343943853  feasibility:1.0  p1:-0.0448989891458183 p2:0.05805658753643998  alpha:0.01315759839062168  w:tensor(1., dtype=torch.float64)
+log EI value: -1.8808233737070899
+Local search time     0.0690 sec
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha64', '--par_factor', '8']
+
+Time elapsed:  0.14379048347473145
+par_factor,compute_time,timestamp
+8,0.14379048347473145,2097
+
+Black box function time     0.1464 sec
+Total iteration time     0.3996 sec
+Starting optimization iteration: 2 sample no: 7
+lengthscales:
+0.13070933366599455
+kernel variance: 2.278719403675051
+noise variance: 0.004017836562461926
+End of training - Time       0.08 sec
+Model fitting time     0.0762 sec
+Total RS time     0.0001 sec
+Optimization function time     0.0027 sec
+Starting local search on configuration: <8.0> with acq. val. 0.012059275337631388
+Best neighbour: <8.0> with acq. val. 0.012059275337631388
+obj mean:0.262645959854126  obj std:0.10631705075502396 
+f*:-1.1179343461990356  mu:-1.1048861170916593  sigma:0.04479091068002801  feasibility:1.0  p1:-0.005056179262701235 p2:0.017115454600332623  alpha:0.012059275337631388  w:tensor(1., dtype=torch.float64)
+log EI value: -1.918678788905957
+Local minimum found!
+Starting local search on configuration: <2.0> with acq. val. 5.979179290074585e-81
+Best neighbour: <2.0> with acq. val. 5.979179290074245e-81
+obj mean:0.262645959854126  obj std:0.10631705075502396 
+f*:-1.1179343461990356  mu:0.08450763951310067  sigma:0.06319710320126307  feasibility:1.0  p1:-0.0 p2:5.979179290074585e-81  alpha:5.979179290074585e-81  w:tensor(1., dtype=torch.float64)
+log EI value: -80.22335842374616
+Local minimum found!
+Starting local search on configuration: <16.0> with acq. val. 1.5985671980924538e-103
+Best neighbour: <8.0> with acq. val. 0.012059275337631388
+Best neighbour: <8.0> with acq. val. 0.012059275337631388
+obj mean:0.262645959854126  obj std:0.10631705075502396 
+f*:-1.1179343461990356  mu:-1.1048861170916593  sigma:0.04479091068002801  feasibility:1.0  p1:-0.005056179262701235 p2:0.017115454600332623  alpha:0.012059275337631388  w:tensor(1., dtype=torch.float64)
+log EI value: -1.918678788905957
+Local minimum found!
+Starting local search on configuration: <4.0> with acq. val. 3.524468792849355e-183
+Best neighbour: <8.0> with acq. val. 0.012059275337631388
+Best neighbour: <8.0> with acq. val. 0.012059275337631388
+obj mean:0.262645959854126  obj std:0.10631705075502396 
+f*:-1.1179343461990356  mu:-1.1048861170916593  sigma:0.04479091068002801  feasibility:1.0  p1:-0.005056179262701235 p2:0.017115454600332623  alpha:0.012059275337631388  w:tensor(1., dtype=torch.float64)
+log EI value: -1.918678788905957
+Local minimum found!
+Starting local search on configuration: <32.0> with acq. val. 0.0
+Best neighbour: <16.0> with acq. val. 1.5985671980924538e-103
+Best neighbour: <8.0> with acq. val. 0.012059275337631388
+Best neighbour: <8.0> with acq. val. 0.012059275337631388
+obj mean:0.262645959854126  obj std:0.10631705075502396 
+f*:-1.1179343461990356  mu:-1.1048861170916593  sigma:0.04479091068002801  feasibility:1.0  p1:-0.005056179262701235 p2:0.017115454600332623  alpha:0.012059275337631388  w:tensor(1., dtype=torch.float64)
+log EI value: -1.918678788905957
+Local minimum found!
+Starting local search on configuration: <8.0> with acq. val. 0.012059275337631388
+Best neighbour: <8.0> with acq. val. 0.012059275337631388
+obj mean:0.262645959854126  obj std:0.10631705075502396 
+f*:-1.1179343461990356  mu:-1.1048861170916593  sigma:0.04479091068002801  feasibility:1.0  p1:-0.005056179262701235 p2:0.017115454600332623  alpha:0.012059275337631388  w:tensor(1., dtype=torch.float64)
+log EI value: -1.918678788905957
+Local minimum found!
+Starting local search on configuration: <8.0> with acq. val. 0.012059275337631388
+Best neighbour: <8.0> with acq. val. 0.012059275337631388
+obj mean:0.262645959854126  obj std:0.10631705075502396 
+f*:-1.1179343461990356  mu:-1.1048861170916593  sigma:0.04479091068002801  feasibility:1.0  p1:-0.005056179262701235 p2:0.017115454600332623  alpha:0.012059275337631388  w:tensor(1., dtype=torch.float64)
+log EI value: -1.918678788905957
+Local minimum found!
+Starting local search on configuration: <16.0> with acq. val. 1.5985671980924538e-103
+Best neighbour: <8.0> with acq. val. 0.012059275337631388
+Best neighbour: <8.0> with acq. val. 0.012059275337631388
+obj mean:0.262645959854126  obj std:0.10631705075502396 
+f*:-1.1179343461990356  mu:-1.1048861170916593  sigma:0.04479091068002801  feasibility:1.0  p1:-0.005056179262701235 p2:0.017115454600332623  alpha:0.012059275337631388  w:tensor(1., dtype=torch.float64)
+log EI value: -1.918678788905957
+Local minimum found!
+Multi-start LS time     0.0487 sec
+Best found configuration: <8.0>
+obj mean:0.262645959854126  obj std:0.10631705075502396 
+f*:-1.1179343461990356  mu:-1.1048861170916593  sigma:0.04479091068002801  feasibility:1.0  p1:-0.005056179262701235 p2:0.017115454600332623  alpha:0.012059275337631388  w:tensor(1., dtype=torch.float64)
+log EI value: -1.918678788905957
+Local search time     0.0554 sec
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha64', '--par_factor', '8']
+
+Time elapsed:  0.151808500289917
+par_factor,compute_time,timestamp
+8,0.151808500289917,2384
+
+Black box function time     0.1549 sec
+Total iteration time     0.2867 sec
+Starting optimization iteration: 3 sample no: 8
+lengthscales:
+0.09081746587524389
+kernel variance: 1.5126376910548724
+noise variance: 0.002827022677357665
+End of training - Time       0.04 sec
+Model fitting time     0.0428 sec
+Total RS time     0.0002 sec
+Optimization function time     0.0028 sec
+Starting local search on configuration: <8.0> with acq. val. 0.002096600117868298
+Best neighbour: <8.0> with acq. val. 0.0020966001178698707
+obj mean:0.24879127740859985  obj std:0.1059442013502121 
+f*:-0.991095244884491  mu:-0.9573723617552549  sigma:0.030686869674859816  feasibility:1.0  p1:-0.004572470705212516 p2:0.0066690708230808145  alpha:0.002096600117868298  w:tensor(1., dtype=torch.float64)
+log EI value: -2.678484394123961
+Local minimum found!
+Starting local search on configuration: <2.0> with acq. val. 2.8063300274491447e-114
+Best neighbour: <2.0> with acq. val. 2.8063300275063643e-114
+obj mean:0.24879127740859985  obj std:0.1059442013502121 
+f*:-0.991095244884491  mu:0.2135071384702042  sigma:0.05307441878229872  feasibility:1.0  p1:-0.0 p2:2.8063300274491447e-114  alpha:2.8063300274491447e-114  w:tensor(1., dtype=torch.float64)
+log EI value: -113.55186125680306
+Local minimum found!
+Starting local search on configuration: <16.0> with acq. val. 2.1208315006268793e-147
+Best neighbour: <8.0> with acq. val. 0.0020966001178698707
+Best neighbour: <8.0> with acq. val. 0.0020966001178698707
+obj mean:0.24879127740859985  obj std:0.1059442013502121 
+f*:-0.991095244884491  mu:-0.9573723617552549  sigma:0.030686869674859816  feasibility:1.0  p1:-0.004572470705212516 p2:0.0066690708230808145  alpha:0.002096600117868298  w:tensor(1., dtype=torch.float64)
+log EI value: -2.678484394123961
+Local minimum found!
+Starting local search on configuration: <4.0> with acq. val. 1.5033432121480002e-261
+Best neighbour: <8.0> with acq. val. 0.002096600117871445
+Best neighbour: <8.0> with acq. val. 0.0020966001178698707
+obj mean:0.24879127740859985  obj std:0.1059442013502121 
+f*:-0.991095244884491  mu:-0.9573723617552549  sigma:0.030686869674859816  feasibility:1.0  p1:-0.004572470705212516 p2:0.0066690708230808145  alpha:0.002096600117868298  w:tensor(1., dtype=torch.float64)
+log EI value: -2.678484394123961
+Local minimum found!
+Starting local search on configuration: <32.0> with acq. val. 0.0
+Best neighbour: <16.0> with acq. val. 2.1208315005158014e-147
+Best neighbour: <8.0> with acq. val. 0.0020966001178698707
+Best neighbour: <8.0> with acq. val. 0.0020966001178698707
+obj mean:0.24879127740859985  obj std:0.1059442013502121 
+f*:-0.991095244884491  mu:-0.9573723617552549  sigma:0.030686869674859816  feasibility:1.0  p1:-0.004572470705212516 p2:0.0066690708230808145  alpha:0.002096600117868298  w:tensor(1., dtype=torch.float64)
+log EI value: -2.678484394123961
+Local minimum found!
+Starting local search on configuration: <8.0> with acq. val. 0.002096600117868298
+Best neighbour: <8.0> with acq. val. 0.0020966001178698707
+obj mean:0.24879127740859985  obj std:0.1059442013502121 
+f*:-0.991095244884491  mu:-0.9573723617552549  sigma:0.030686869674859816  feasibility:1.0  p1:-0.004572470705212516 p2:0.0066690708230808145  alpha:0.002096600117868298  w:tensor(1., dtype=torch.float64)
+log EI value: -2.678484394123961
+Local minimum found!
+Starting local search on configuration: <8.0> with acq. val. 0.002096600117868298
+Best neighbour: <8.0> with acq. val. 0.0020966001178698707
+obj mean:0.24879127740859985  obj std:0.1059442013502121 
+f*:-0.991095244884491  mu:-0.9573723617552549  sigma:0.030686869674859816  feasibility:1.0  p1:-0.004572470705212516 p2:0.0066690708230808145  alpha:0.002096600117868298  w:tensor(1., dtype=torch.float64)
+log EI value: -2.678484394123961
+Local minimum found!
+Starting local search on configuration: <8.0> with acq. val. 0.002096600117868298
+Best neighbour: <8.0> with acq. val. 0.0020966001178698707
+obj mean:0.24879127740859985  obj std:0.1059442013502121 
+f*:-0.991095244884491  mu:-0.9573723617552549  sigma:0.030686869674859816  feasibility:1.0  p1:-0.004572470705212516 p2:0.0066690708230808145  alpha:0.002096600117868298  w:tensor(1., dtype=torch.float64)
+log EI value: -2.678484394123961
+Local minimum found!
+Multi-start LS time     0.1410 sec
+Best found configuration: <8.0>
+obj mean:0.24879127740859985  obj std:0.1059442013502121 
+f*:-0.991095244884491  mu:-0.9573723617552549  sigma:0.030686869674859816  feasibility:1.0  p1:-0.004572470705212516 p2:0.0066690708230808145  alpha:0.002096600117868298  w:tensor(1., dtype=torch.float64)
+log EI value: -2.678484394123961
+Local search time     0.1479 sec
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha64', '--par_factor', '8']
+
+Time elapsed:  0.14052748680114746
+par_factor,compute_time,timestamp
+8,0.14052748680114746,2718
+
+Black box function time     0.1434 sec
+Total iteration time     0.3344 sec
+End of BO phase - Time     1.0210 sec
+End of Bayesian Optimization
+Total script time       2.72 sec
+
+tensor([[16.],
+        [ 2.],
+        [ 4.],
+        [ 8.],
+        [16.],
+        [32.],
+        [ 8.],
+        [ 8.],
+        [ 8.]], dtype=torch.float64)
+tensor([[0.24023914337158203125],
+        [0.27108168601989746094],
+        [0.33833575248718261719],
+        [0.14605498313903808594],
+        [0.25279641151428222656],
+        [0.44622325897216796875],
+        [0.14379048347473144531],
+        [0.15180850028991699219],
+        [0.14052748680114746094]])
+tensor([ 240.,  512.,  850.,  997., 1250., 1696., 2097., 2384., 2718.])
+tensor([], dtype=torch.bool)
+
+Best point found: 
+tensor([[16.]], dtype=torch.float64)
+tensor([[0.24023914337158203125]])
+tensor([240.])
+tensor([], dtype=torch.bool)
+
+End of HyperMapper
+End of known constraints
+application_name: comal
+optimization_objectives: ['compute_time']
+optimization_iterations: 3
+acquisition_function: EI
+optimization_method: bayesian_optimization
+input_parameters: {'par_factor': {'parameter_type': 'ordinal', 'values': [2, 4, 8, 16, 32], 'parameter_default': 16, 'prior': 'uniform', 'prior_parameters': []}}
+predict_noiseless: True
+log_file: ./taco.log
+acquisition_function_optimizer: local_search
+allow_duplicate_samples: True
+design_of_experiment: {'doe_type': 'random sampling', 'number_of_samples': 10, 'allow_repetitions': False}
+epsilon_greedy_threshold: 0
+evolution_crossover: False
+evolution_generations: 150
+evolution_population_size: 50
+exploration_augmentation: 0.0001
+feasible_output: {'false_value': 'False', 'name': 'Valid', 'true_value': 'True', 'enable_feasible_predictor': False, 'feasibility_threshold': 0.1}
+baco_mode: {'mode': 'default'}
+lengthscale_prior: {'name': 'none', 'parameters': [1.3, 0.1]}
+local_search_from_best: True
+local_search_improvement_threshold: 0
+local_search_random_points: 30000
+local_search_starting_points: 10
+local_search_step_size: 0.03
+log_acq_value: False
+log_transform_output: False
+model_good_quantile: 0.05
+model_weight: 10
+models: {'model': 'gaussian_process', 'bootstrap': True, 'max_features': 0.5, 'min_samples_split': 2, 'number_of_trees': 200, 'use_all_data_to_fit_mean': False, 'use_all_data_to_fit_variance': False}
+multistart_hyperparameter_optimization: False
+hyperparameter_optimization_iterations: 5
+GP_model: botorch
+mutation_rate: 1
+naive_cot_rs: False
+noise: True
+noise_prior: {'name': 'none'}
+normalize_inputs: True
+number_of_repetitions: 1
+objective_value_target: -9999
+output_data_file: output_samples.csv
+outputscale_prior: {'name': 'none'}
+prior_estimation_file: samples.csv
+prior_estimation_quantile: 0.1
+prior_floor: 1e-06
+prior_limit_estimation_points: 10000
+regularize_evolution: False
+reoptimise_hyperparameters_interval: 1
+resume_optimization: False
+resume_optimization_file: output_samples.csv
+reuse_gp_hyperparameters: False
+run_directory: .
+standardize_objectives: True
+time_budget: -1
+timestamp: Timestamp
+use_STGP: True
+
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha', '--par_factor', '16']
+
+Time elapsed:  213.49398684501648
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha', '--par_factor', '2']
+
+application_name: comal
+optimization_objectives: ['compute_time']
+optimization_iterations: 3
+acquisition_function: EI
+optimization_method: bayesian_optimization
+input_parameters: {'par_factor': {'parameter_type': 'ordinal', 'values': [2, 4, 8, 16, 32], 'parameter_default': 16, 'prior': 'uniform', 'prior_parameters': []}}
+predict_noiseless: True
+log_file: ./taco.log
+acquisition_function_optimizer: local_search
+allow_duplicate_samples: True
+design_of_experiment: {'doe_type': 'random sampling', 'number_of_samples': 10, 'allow_repetitions': False}
+epsilon_greedy_threshold: 0
+evolution_crossover: False
+evolution_generations: 150
+evolution_population_size: 50
+exploration_augmentation: 0.0001
+feasible_output: {'false_value': 'False', 'name': 'Valid', 'true_value': 'True', 'enable_feasible_predictor': False, 'feasibility_threshold': 0.1}
+baco_mode: {'mode': 'default'}
+lengthscale_prior: {'name': 'none', 'parameters': [1.3, 0.1]}
+local_search_from_best: True
+local_search_improvement_threshold: 0
+local_search_random_points: 30000
+local_search_starting_points: 10
+local_search_step_size: 0.03
+log_acq_value: False
+log_transform_output: False
+model_good_quantile: 0.05
+model_weight: 10
+models: {'model': 'gaussian_process', 'bootstrap': True, 'max_features': 0.5, 'min_samples_split': 2, 'number_of_trees': 200, 'use_all_data_to_fit_mean': False, 'use_all_data_to_fit_variance': False}
+multistart_hyperparameter_optimization: False
+hyperparameter_optimization_iterations: 5
+GP_model: botorch
+mutation_rate: 1
+naive_cot_rs: False
+noise: True
+noise_prior: {'name': 'none'}
+normalize_inputs: True
+number_of_repetitions: 1
+objective_value_target: -9999
+output_data_file: output_samples.csv
+outputscale_prior: {'name': 'none'}
+prior_estimation_file: samples.csv
+prior_estimation_quantile: 0.1
+prior_floor: 1e-06
+prior_limit_estimation_points: 10000
+regularize_evolution: False
+reoptimise_hyperparameters_interval: 1
+resume_optimization: False
+resume_optimization_file: output_samples.csv
+reuse_gp_hyperparameters: False
+run_directory: .
+standardize_objectives: True
+time_budget: -1
+timestamp: Timestamp
+use_STGP: True
+
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha', '--par_factor', '16']
+
+application_name: comal
+optimization_objectives: ['compute_time']
+optimization_iterations: 3
+acquisition_function: EI
+optimization_method: bayesian_optimization
+input_parameters: {'par_factor': {'parameter_type': 'ordinal', 'values': [2, 4, 8, 16, 32], 'parameter_default': 8, 'prior': 'uniform', 'prior_parameters': []}}
+predict_noiseless: True
+log_file: ./taco.log
+acquisition_function_optimizer: local_search
+allow_duplicate_samples: True
+design_of_experiment: {'doe_type': 'random sampling', 'number_of_samples': 10, 'allow_repetitions': False}
+epsilon_greedy_threshold: 0
+evolution_crossover: False
+evolution_generations: 150
+evolution_population_size: 50
+exploration_augmentation: 0.0001
+feasible_output: {'false_value': 'False', 'name': 'Valid', 'true_value': 'True', 'enable_feasible_predictor': False, 'feasibility_threshold': 0.1}
+baco_mode: {'mode': 'default'}
+lengthscale_prior: {'name': 'none', 'parameters': [1.3, 0.1]}
+local_search_from_best: True
+local_search_improvement_threshold: 0
+local_search_random_points: 30000
+local_search_starting_points: 10
+local_search_step_size: 0.03
+log_acq_value: False
+log_transform_output: False
+model_good_quantile: 0.05
+model_weight: 10
+models: {'model': 'gaussian_process', 'bootstrap': True, 'max_features': 0.5, 'min_samples_split': 2, 'number_of_trees': 200, 'use_all_data_to_fit_mean': False, 'use_all_data_to_fit_variance': False}
+multistart_hyperparameter_optimization: False
+hyperparameter_optimization_iterations: 5
+GP_model: botorch
+mutation_rate: 1
+naive_cot_rs: False
+noise: True
+noise_prior: {'name': 'none'}
+normalize_inputs: True
+number_of_repetitions: 1
+objective_value_target: -9999
+output_data_file: output_samples.csv
+outputscale_prior: {'name': 'none'}
+prior_estimation_file: samples.csv
+prior_estimation_quantile: 0.1
+prior_floor: 1e-06
+prior_limit_estimation_points: 10000
+regularize_evolution: False
+reoptimise_hyperparameters_interval: 1
+resume_optimization: False
+resume_optimization_file: output_samples.csv
+reuse_gp_hyperparameters: False
+run_directory: .
+standardize_objectives: True
+time_budget: -1
+timestamp: Timestamp
+use_STGP: True
+
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha256', '--par_factor', '8']
+
+['Init took: 56.01ms', 'Run took: 1.26s', 'Elapsed cycles: 336869', '']
+Time elapsed:  1.4616410732269287
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha256', '--par_factor', '2']
+
+['Init took: 18.14ms', 'Run took: 2.36s', 'Elapsed cycles: 1345295', '']
+Time elapsed:  2.503969192504883
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha256', '--par_factor', '4']
+
+['Init took: 30.61ms', 'Run took: 2.44s', 'Elapsed cycles: 672862', '']
+Time elapsed:  2.599928140640259
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha256', '--par_factor', '8']
+
+application_name: comal
+optimization_objectives: ['compute_time']
+optimization_iterations: 3
+acquisition_function: EI
+optimization_method: bayesian_optimization
+input_parameters: {'par_factor': {'parameter_type': 'ordinal', 'values': [2, 4, 8, 16, 32], 'parameter_default': 8, 'prior': 'uniform', 'prior_parameters': []}}
+predict_noiseless: True
+log_file: ./taco.log
+acquisition_function_optimizer: local_search
+allow_duplicate_samples: True
+design_of_experiment: {'doe_type': 'random sampling', 'number_of_samples': 10, 'allow_repetitions': False}
+epsilon_greedy_threshold: 0
+evolution_crossover: False
+evolution_generations: 150
+evolution_population_size: 50
+exploration_augmentation: 0.0001
+feasible_output: {'false_value': 'False', 'name': 'Valid', 'true_value': 'True', 'enable_feasible_predictor': False, 'feasibility_threshold': 0.1}
+baco_mode: {'mode': 'default'}
+lengthscale_prior: {'name': 'none', 'parameters': [1.3, 0.1]}
+local_search_from_best: True
+local_search_improvement_threshold: 0
+local_search_random_points: 30000
+local_search_starting_points: 10
+local_search_step_size: 0.03
+log_acq_value: False
+log_transform_output: False
+model_good_quantile: 0.05
+model_weight: 10
+models: {'model': 'gaussian_process', 'bootstrap': True, 'max_features': 0.5, 'min_samples_split': 2, 'number_of_trees': 200, 'use_all_data_to_fit_mean': False, 'use_all_data_to_fit_variance': False}
+multistart_hyperparameter_optimization: False
+hyperparameter_optimization_iterations: 5
+GP_model: botorch
+mutation_rate: 1
+naive_cot_rs: False
+noise: True
+noise_prior: {'name': 'none'}
+normalize_inputs: True
+number_of_repetitions: 1
+objective_value_target: -9999
+output_data_file: output_samples.csv
+outputscale_prior: {'name': 'none'}
+prior_estimation_file: samples.csv
+prior_estimation_quantile: 0.1
+prior_floor: 1e-06
+prior_limit_estimation_points: 10000
+regularize_evolution: False
+reoptimise_hyperparameters_interval: 1
+resume_optimization: False
+resume_optimization_file: output_samples.csv
+reuse_gp_hyperparameters: False
+run_directory: .
+standardize_objectives: True
+time_budget: -1
+timestamp: Timestamp
+use_STGP: True
+
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha256', '--par_factor', '8']
+
+336869
+Time elapsed:  1.2940068244934082
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha256', '--par_factor', '2']
+
+1345295
+Time elapsed:  2.6163744926452637
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha256', '--par_factor', '4']
+
+application_name: comal
+optimization_objectives: ['compute_time']
+optimization_iterations: 3
+acquisition_function: EI
+optimization_method: bayesian_optimization
+input_parameters: {'par_factor': {'parameter_type': 'ordinal', 'values': [2, 4, 8, 16, 32], 'parameter_default': 8, 'prior': 'uniform', 'prior_parameters': []}}
+predict_noiseless: True
+log_file: ./taco.log
+acquisition_function_optimizer: local_search
+allow_duplicate_samples: True
+design_of_experiment: {'doe_type': 'random sampling', 'number_of_samples': 10, 'allow_repetitions': False}
+epsilon_greedy_threshold: 0
+evolution_crossover: False
+evolution_generations: 150
+evolution_population_size: 50
+exploration_augmentation: 0.0001
+feasible_output: {'false_value': 'False', 'name': 'Valid', 'true_value': 'True', 'enable_feasible_predictor': False, 'feasibility_threshold': 0.1}
+baco_mode: {'mode': 'default'}
+lengthscale_prior: {'name': 'none', 'parameters': [1.3, 0.1]}
+local_search_from_best: True
+local_search_improvement_threshold: 0
+local_search_random_points: 30000
+local_search_starting_points: 10
+local_search_step_size: 0.03
+log_acq_value: False
+log_transform_output: False
+model_good_quantile: 0.05
+model_weight: 10
+models: {'model': 'gaussian_process', 'bootstrap': True, 'max_features': 0.5, 'min_samples_split': 2, 'number_of_trees': 200, 'use_all_data_to_fit_mean': False, 'use_all_data_to_fit_variance': False}
+multistart_hyperparameter_optimization: False
+hyperparameter_optimization_iterations: 5
+GP_model: botorch
+mutation_rate: 1
+naive_cot_rs: False
+noise: True
+noise_prior: {'name': 'none'}
+normalize_inputs: True
+number_of_repetitions: 1
+objective_value_target: -9999
+output_data_file: output_samples.csv
+outputscale_prior: {'name': 'none'}
+prior_estimation_file: samples.csv
+prior_estimation_quantile: 0.1
+prior_floor: 1e-06
+prior_limit_estimation_points: 10000
+regularize_evolution: False
+reoptimise_hyperparameters_interval: 1
+resume_optimization: False
+resume_optimization_file: output_samples.csv
+reuse_gp_hyperparameters: False
+run_directory: .
+standardize_objectives: True
+time_budget: -1
+timestamp: Timestamp
+use_STGP: True
+
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha256', '--par_factor', '8']
+
+Time elapsed:  1.3137264251708984
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha256', '--par_factor', '2']
+
+Time elapsed:  2.50392484664917
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha256', '--par_factor', '4']
+
+Time elapsed:  2.5664970874786377
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha256', '--par_factor', '8']
+
+Time elapsed:  2.806673765182495
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha256', '--par_factor', '16']
+
+Invalid config
+Time elapsed:  0.346510648727417
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha256', '--par_factor', '32']
+
+Invalid config
+Time elapsed:  0.5896472930908203
+par_factor,compute_time,timestamp
+8,336869,1315
+2,1345295,3819
+4,672862,6385
+8,336869,9192
+16,0,9539
+32,0,10129
+
+
+End of doe/resume phase, the number of evaluated configurations is: 10
+
+End of DoE - Time    10.1323 sec
+Starting optimization iteration: 1 sample no: 6
+lengthscales:
+0.1602579173996797
+kernel variance: 2.7156939090746994
+noise variance: 9.999999747378752e-05
+End of training - Time       0.18 sec
+Model fitting time     0.1849 sec
+Total RS time     0.0001 sec
+Optimization function time     0.0030 sec
+Starting local search on configuration: <32.0> with acq. val. 0.003924109366081806
+Best neighbour: <32.0> with acq. val. 0.003924109366081806
+obj mean:448649.15625  obj std:506321.40625 
+f*:-0.8860955834388733  mu:-0.8860644171940154  sigma:0.009999815766079527  feasibility:1.0  p1:-6.489676587608404e-05 p2:0.00398900613195789  alpha:0.003924109366081806  w:tensor(1., dtype=torch.float64)
+log EI value: -2.4062588972085135
+Local minimum found!
+Starting local search on configuration: <16.0> with acq. val. 0.003922393103954204
+Best neighbour: <32.0> with acq. val. 0.003924109366081806
+Best neighbour: <32.0> with acq. val. 0.003924109366081806
+obj mean:448649.15625  obj std:506321.40625 
+f*:-0.8860955834388733  mu:-0.8860644171940154  sigma:0.009999815766079527  feasibility:1.0  p1:-6.489676587608404e-05 p2:0.00398900613195789  alpha:0.003924109366081806  w:tensor(1., dtype=torch.float64)
+log EI value: -2.4062588972085135
+Local minimum found!
+Starting local search on configuration: <8.0> with acq. val. 0.0
+Best neighbour: <16.0> with acq. val. 0.003922393103954149
+Best neighbour: <32.0> with acq. val. 0.003924109366081806
+Best neighbour: <32.0> with acq. val. 0.003924109366081806
+obj mean:448649.15625  obj std:506321.40625 
+f*:-0.8860955834388733  mu:-0.8860644171940154  sigma:0.009999815766079527  feasibility:1.0  p1:-6.489676587608404e-05 p2:0.00398900613195789  alpha:0.003924109366081806  w:tensor(1., dtype=torch.float64)
+log EI value: -2.4062588972085135
+Local minimum found!
+Starting local search on configuration: <2.0> with acq. val. 0.0
+Best neighbour: <2.0> with acq. val. 0.0
+obj mean:448649.15625  obj std:506321.40625 
+f*:-0.8860955834388733  mu:1.7706597477604236  sigma:0.009999052363255904  feasibility:1.0  p1:-0.0 p2:0.0  alpha:0.0  w:tensor(1., dtype=torch.float64)
+log EI value: -inf
+Local minimum found!
+Starting local search on configuration: <4.0> with acq. val. 0.0
+Best neighbour: <4.0> with acq. val. 0.0
+obj mean:448649.15625  obj std:506321.40625 
+f*:-0.8860955834388733  mu:0.44304678016921595  sigma:0.009998676476437351  feasibility:1.0  p1:-0.0 p2:0.0  alpha:0.0  w:tensor(1., dtype=torch.float64)
+log EI value: -inf
+Local minimum found!
+Starting local search on configuration: <32.0> with acq. val. 0.003924109366081806
+Best neighbour: <32.0> with acq. val. 0.003924109366081806
+obj mean:448649.15625  obj std:506321.40625 
+f*:-0.8860955834388733  mu:-0.8860644171940154  sigma:0.009999815766079527  feasibility:1.0  p1:-6.489676587608404e-05 p2:0.00398900613195789  alpha:0.003924109366081806  w:tensor(1., dtype=torch.float64)
+log EI value: -2.4062588972085135
+Local minimum found!
+Starting local search on configuration: <16.0> with acq. val. 0.003922393103954204
+Best neighbour: <32.0> with acq. val. 0.003924109366081806
+Best neighbour: <32.0> with acq. val. 0.003924109366081806
+obj mean:448649.15625  obj std:506321.40625 
+f*:-0.8860955834388733  mu:-0.8860644171940154  sigma:0.009999815766079527  feasibility:1.0  p1:-6.489676587608404e-05 p2:0.00398900613195789  alpha:0.003924109366081806  w:tensor(1., dtype=torch.float64)
+log EI value: -2.4062588972085135
+Local minimum found!
+Starting local search on configuration: <8.0> with acq. val. 0.0
+Best neighbour: <16.0> with acq. val. 0.003922393103954149
+Best neighbour: <32.0> with acq. val. 0.003924109366081806
+Best neighbour: <32.0> with acq. val. 0.003924109366081806
+obj mean:448649.15625  obj std:506321.40625 
+f*:-0.8860955834388733  mu:-0.8860644171940154  sigma:0.009999815766079527  feasibility:1.0  p1:-6.489676587608404e-05 p2:0.00398900613195789  alpha:0.003924109366081806  w:tensor(1., dtype=torch.float64)
+log EI value: -2.4062588972085135
+Local minimum found!
+Multi-start LS time     0.0524 sec
+Best found configuration: <32.0>
+obj mean:448649.15625  obj std:506321.40625 
+f*:-0.8860955834388733  mu:-0.8860644171940154  sigma:0.009999815766079527  feasibility:1.0  p1:-6.489676587608404e-05 p2:0.00398900613195789  alpha:0.003924109366081806  w:tensor(1., dtype=torch.float64)
+log EI value: -2.4062588972085135
+Local search time     0.0596 sec
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha256', '--par_factor', '32']
+
+Invalid config
+Time elapsed:  0.6038951873779297
+par_factor,compute_time,timestamp
+32,0,10982
+
+Black box function time     0.6067 sec
+Total iteration time     0.8513 sec
+Starting optimization iteration: 2 sample no: 7
+lengthscales:
+0.1587070752071933
+kernel variance: 2.810723551516256
+noise variance: 9.999999747378752e-05
+End of training - Time       0.04 sec
+Model fitting time     0.0371 sec
+Total RS time     0.0002 sec
+Optimization function time     0.0028 sec
+Starting local search on configuration: <16.0> with acq. val. 0.003922640919430113
+Best neighbour: <16.0> with acq. val. 0.0039226409194478284
+obj mean:384556.4375  obj std:492330.8125 
+f*:-0.7810935974121094  mu:-0.7810594671063998  sigma:0.009999810497750783  feasibility:1.0  p1:-6.634742615559797e-05 p2:0.003988988345585711  alpha:0.003922640919430113  w:tensor(1., dtype=torch.float64)
+log EI value: -2.406421445591485
+Local minimum found!
+Starting local search on configuration: <32.0> with acq. val. 0.002763581495165346
+Best neighbour: <16.0> with acq. val. 0.0039226409194478284
+Best neighbour: <16.0> with acq. val. 0.0039226409194478284
+obj mean:384556.4375  obj std:492330.8125 
+f*:-0.7810935974121094  mu:-0.7810594671063998  sigma:0.009999810497750783  feasibility:1.0  p1:-6.634742615559797e-05 p2:0.003988988345585711  alpha:0.003922640919430113  w:tensor(1., dtype=torch.float64)
+log EI value: -2.406421445591485
+Local minimum found!
+Starting local search on configuration: <8.0> with acq. val. 0.0
+Best neighbour: <16.0> with acq. val. 0.00392264091943897
+Best neighbour: <16.0> with acq. val. 0.0039226409194478284
+obj mean:384556.4375  obj std:492330.8125 
+f*:-0.7810935974121094  mu:-0.7810594671063998  sigma:0.009999810497750783  feasibility:1.0  p1:-6.634742615559797e-05 p2:0.003988988345585711  alpha:0.003922640919430113  w:tensor(1., dtype=torch.float64)
+log EI value: -2.406421445591485
+Local minimum found!
+Starting local search on configuration: <2.0> with acq. val. 0.0
+Best neighbour: <2.0> with acq. val. 0.0
+obj mean:384556.4375  obj std:492330.8125 
+f*:-0.7810935974121094  mu:1.9511716907310572  sigma:0.009999103339650218  feasibility:1.0  p1:-0.0 p2:0.0  alpha:0.0  w:tensor(1., dtype=torch.float64)
+log EI value: -inf
+Local minimum found!
+Starting local search on configuration: <4.0> with acq. val. 0.0
+Best neighbour: <4.0> with acq. val. 0.0
+obj mean:384556.4375  obj std:492330.8125 
+f*:-0.7810935974121094  mu:0.585805888427843  sigma:0.009998754075430775  feasibility:1.0  p1:-0.0 p2:0.0  alpha:0.0  w:tensor(1., dtype=torch.float64)
+log EI value: -inf
+Local minimum found!
+Starting local search on configuration: <32.0> with acq. val. 0.002763581495165346
+Best neighbour: <16.0> with acq. val. 0.0039226409194478284
+Best neighbour: <16.0> with acq. val. 0.0039226409194478284
+obj mean:384556.4375  obj std:492330.8125 
+f*:-0.7810935974121094  mu:-0.7810594671063998  sigma:0.009999810497750783  feasibility:1.0  p1:-6.634742615559797e-05 p2:0.003988988345585711  alpha:0.003922640919430113  w:tensor(1., dtype=torch.float64)
+log EI value: -2.406421445591485
+Local minimum found!
+Starting local search on configuration: <16.0> with acq. val. 0.003922640919430113
+Best neighbour: <16.0> with acq. val. 0.0039226409194478284
+obj mean:384556.4375  obj std:492330.8125 
+f*:-0.7810935974121094  mu:-0.7810594671063998  sigma:0.009999810497750783  feasibility:1.0  p1:-6.634742615559797e-05 p2:0.003988988345585711  alpha:0.003922640919430113  w:tensor(1., dtype=torch.float64)
+log EI value: -2.406421445591485
+Local minimum found!
+Starting local search on configuration: <32.0> with acq. val. 0.002763581495165346
+Best neighbour: <16.0> with acq. val. 0.0039226409194478284
+Best neighbour: <16.0> with acq. val. 0.0039226409194478284
+obj mean:384556.4375  obj std:492330.8125 
+f*:-0.7810935974121094  mu:-0.7810594671063998  sigma:0.009999810497750783  feasibility:1.0  p1:-6.634742615559797e-05 p2:0.003988988345585711  alpha:0.003922640919430113  w:tensor(1., dtype=torch.float64)
+log EI value: -2.406421445591485
+Local minimum found!
+Multi-start LS time     0.0494 sec
+Best found configuration: <16.0>
+obj mean:384556.4375  obj std:492330.8125 
+f*:-0.7810935974121094  mu:-0.7810594671063998  sigma:0.009999810497750783  feasibility:1.0  p1:-6.634742615559797e-05 p2:0.003988988345585711  alpha:0.003922640919430113  w:tensor(1., dtype=torch.float64)
+log EI value: -2.406421445591485
+Local search time     0.0565 sec
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha256', '--par_factor', '16']
+
+Invalid config
+Time elapsed:  0.35252928733825684
+par_factor,compute_time,timestamp
+16,0,11431
+
+Black box function time     0.3552 sec
+Total iteration time     0.4490 sec
+Starting optimization iteration: 3 sample no: 8
+lengthscales:
+0.1567986596213239
+kernel variance: 2.931462945595443
+noise variance: 9.999999747378752e-05
+End of training - Time       0.04 sec
+Model fitting time     0.0375 sec
+Total RS time     0.0002 sec
+Optimization function time     0.0028 sec
+Starting local search on configuration: <32.0> with acq. val. 0.0027636710425204985
+Best neighbour: <32.0> with acq. val. 0.002763671042507973
+obj mean:336486.875  obj std:475655.34375 
+f*:-0.7074174284934998  mu:-0.7074021734380112  sigma:0.0070710074787811135  feasibility:1.0  p1:-5.687810044786102e-05 p2:0.00282054914296836  alpha:0.002763671042520499  w:tensor(0.99999999999999988898, dtype=torch.float64)
+log EI value: -2.558513651934709
+Local minimum found!
+Starting local search on configuration: <16.0> with acq. val. 0.002762921584634028
+Best neighbour: <32.0> with acq. val. 0.002763671042507973
+Best neighbour: <32.0> with acq. val. 0.002763671042507973
+obj mean:336486.875  obj std:475655.34375 
+f*:-0.7074174284934998  mu:-0.7074021734380112  sigma:0.0070710074787811135  feasibility:1.0  p1:-5.687810044786102e-05 p2:0.00282054914296836  alpha:0.002763671042520499  w:tensor(0.99999999999999988898, dtype=torch.float64)
+log EI value: -2.558513651934709
+Local minimum found!
+Starting local search on configuration: <8.0> with acq. val. 0.0
+Best neighbour: <16.0> with acq. val. 0.0027629215846465536
+Best neighbour: <32.0> with acq. val. 0.002763671042507973
+Best neighbour: <32.0> with acq. val. 0.002763671042507973
+obj mean:336486.875  obj std:475655.34375 
+f*:-0.7074174284934998  mu:-0.7074021734380112  sigma:0.0070710074787811135  feasibility:1.0  p1:-5.687810044786102e-05 p2:0.00282054914296836  alpha:0.002763671042520499  w:tensor(0.99999999999999988898, dtype=torch.float64)
+log EI value: -2.558513651934709
+Local minimum found!
+Starting local search on configuration: <2.0> with acq. val. 0.0
+Best neighbour: <2.0> with acq. val. 0.0
+obj mean:336486.875  obj std:475655.34375 
+f*:-0.7074174284934998  mu:2.1206506273535326  sigma:0.009999162171873362  feasibility:1.0  p1:-0.0 p2:0.0  alpha:0.0  w:tensor(0.99999999999999988898, dtype=torch.float64)
+log EI value: -inf
+Local minimum found!
+Starting local search on configuration: <4.0> with acq. val. 0.0
+Best neighbour: <4.0> with acq. val. 0.0
+obj mean:336486.875  obj std:475655.34375 
+f*:-0.7074174284934998  mu:0.7073869363128564  sigma:0.009998843210935561  feasibility:1.0  p1:-0.0 p2:0.0  alpha:0.0  w:tensor(0.99999999999999988898, dtype=torch.float64)
+log EI value: -inf
+Local minimum found!
+Starting local search on configuration: <32.0> with acq. val. 0.0027636710425204985
+Best neighbour: <32.0> with acq. val. 0.002763671042507973
+obj mean:336486.875  obj std:475655.34375 
+f*:-0.7074174284934998  mu:-0.7074021734380112  sigma:0.0070710074787811135  feasibility:1.0  p1:-5.687810044786102e-05 p2:0.00282054914296836  alpha:0.002763671042520499  w:tensor(0.99999999999999988898, dtype=torch.float64)
+log EI value: -2.558513651934709
+Local minimum found!
+Starting local search on configuration: <32.0> with acq. val. 0.0027636710425204985
+Best neighbour: <32.0> with acq. val. 0.002763671042507973
+obj mean:336486.875  obj std:475655.34375 
+f*:-0.7074174284934998  mu:-0.7074021734380112  sigma:0.0070710074787811135  feasibility:1.0  p1:-5.687810044786102e-05 p2:0.00282054914296836  alpha:0.002763671042520499  w:tensor(0.99999999999999988898, dtype=torch.float64)
+log EI value: -2.558513651934709
+Local minimum found!
+Starting local search on configuration: <16.0> with acq. val. 0.002762921584634028
+Best neighbour: <32.0> with acq. val. 0.002763671042507973
+Best neighbour: <32.0> with acq. val. 0.002763671042507973
+obj mean:336486.875  obj std:475655.34375 
+f*:-0.7074174284934998  mu:-0.7074021734380112  sigma:0.0070710074787811135  feasibility:1.0  p1:-5.687810044786102e-05 p2:0.00282054914296836  alpha:0.002763671042520499  w:tensor(0.99999999999999988898, dtype=torch.float64)
+log EI value: -2.558513651934709
+Local minimum found!
+Multi-start LS time     0.1364 sec
+Best found configuration: <32.0>
+obj mean:336486.875  obj std:475655.34375 
+f*:-0.7074174284934998  mu:-0.7074021734380112  sigma:0.0070710074787811135  feasibility:1.0  p1:-5.687810044786102e-05 p2:0.00282054914296836  alpha:0.002763671042520499  w:tensor(0.99999999999999988898, dtype=torch.float64)
+log EI value: -2.558513651934709
+Local search time     0.1432 sec
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha256', '--par_factor', '32']
+
+Invalid config
+Time elapsed:  0.6073746681213379
+par_factor,compute_time,timestamp
+32,0,12222
+
+Black box function time     0.6102 sec
+Total iteration time     0.7911 sec
+End of BO phase - Time     2.0916 sec
+End of Bayesian Optimization
+Total script time      12.23 sec
+
+tensor([[ 8.],
+        [ 2.],
+        [ 4.],
+        [ 8.],
+        [16.],
+        [32.],
+        [32.],
+        [16.],
+        [32.]], dtype=torch.float64)
+tensor([[ 336869.],
+        [1345295.],
+        [ 672862.],
+        [ 336869.],
+        [      0.],
+        [      0.],
+        [      0.],
+        [      0.],
+        [      0.]])
+tensor([ 1315.,  3819.,  6385.,  9192.,  9539., 10129., 10982., 11431., 12222.])
+tensor([], dtype=torch.bool)
+
+Best point found: 
+tensor([[8.]], dtype=torch.float64)
+tensor([[336869.]])
+tensor([1315.])
+tensor([], dtype=torch.bool)
+
+End of HyperMapper
+End of known constraints
+application_name: comal
+optimization_objectives: ['compute_time']
+optimization_iterations: 3
+acquisition_function: EI
+optimization_method: bayesian_optimization
+input_parameters: {'par_factor': {'parameter_type': 'ordinal', 'values': [2, 4, 8, 16, 32], 'parameter_default': 8, 'prior': 'uniform', 'prior_parameters': []}}
+predict_noiseless: True
+log_file: ./taco.log
+acquisition_function_optimizer: local_search
+allow_duplicate_samples: True
+design_of_experiment: {'doe_type': 'random sampling', 'number_of_samples': 10, 'allow_repetitions': False}
+epsilon_greedy_threshold: 0
+evolution_crossover: False
+evolution_generations: 150
+evolution_population_size: 50
+exploration_augmentation: 0.0001
+feasible_output: {'false_value': 'False', 'name': 'Valid', 'true_value': 'True', 'enable_feasible_predictor': False, 'feasibility_threshold': 0.1}
+baco_mode: {'mode': 'default'}
+lengthscale_prior: {'name': 'none', 'parameters': [1.3, 0.1]}
+local_search_from_best: True
+local_search_improvement_threshold: 0
+local_search_random_points: 30000
+local_search_starting_points: 10
+local_search_step_size: 0.03
+log_acq_value: False
+log_transform_output: False
+model_good_quantile: 0.05
+model_weight: 10
+models: {'model': 'gaussian_process', 'bootstrap': True, 'max_features': 0.5, 'min_samples_split': 2, 'number_of_trees': 200, 'use_all_data_to_fit_mean': False, 'use_all_data_to_fit_variance': False}
+multistart_hyperparameter_optimization: False
+hyperparameter_optimization_iterations: 5
+GP_model: botorch
+mutation_rate: 1
+naive_cot_rs: False
+noise: True
+noise_prior: {'name': 'none'}
+normalize_inputs: True
+number_of_repetitions: 1
+objective_value_target: -9999
+output_data_file: output_samples.csv
+outputscale_prior: {'name': 'none'}
+prior_estimation_file: samples.csv
+prior_estimation_quantile: 0.1
+prior_floor: 1e-06
+prior_limit_estimation_points: 10000
+regularize_evolution: False
+reoptimise_hyperparameters_interval: 1
+resume_optimization: False
+resume_optimization_file: output_samples.csv
+reuse_gp_hyperparameters: False
+run_directory: .
+standardize_objectives: True
+time_budget: -1
+timestamp: Timestamp
+use_STGP: True
+
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha256', '--par_factor', '8']
+
+Time elapsed:  336869
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha256', '--par_factor', '2']
+
+Time elapsed:  1345295
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha256', '--par_factor', '4']
+
+Time elapsed:  672862
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha256', '--par_factor', '8']
+
+Time elapsed:  336869
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha256', '--par_factor', '16']
+
+Invalid config
+Time elapsed:  10000000000.0
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha256', '--par_factor', '32']
+
+Invalid config
+Time elapsed:  10000000000.0
+par_factor,compute_time,timestamp
+8,336869.0,1335
+2,1345295.0,3961
+4,672862.0,6570
+8,336869.0,9146
+16,10000000000.0,9499
+32,10000000000.0,10086
+
+
+End of doe/resume phase, the number of evaluated configurations is: 10
+
+End of DoE - Time    10.0897 sec
+Starting optimization iteration: 1 sample no: 6
+lengthscales:
+0.3447451188652315
+kernel variance: 2.051424773840227
+noise variance: 9.999999747378752e-05
+End of training - Time       0.19 sec
+Model fitting time     0.1875 sec
+Total RS time     0.0001 sec
+Optimization function time     0.0029 sec
+Starting local search on configuration: <4.0> with acq. val. 0.0041824751022616026
+Best neighbour: <4.0> with acq. val. 0.0041824751022616026
+obj mean:3333782272.0  obj std:5163630080.0 
+f*:-0.6455624103546143  mu:-0.6460583437926948  sigma:0.009979828396732072  feasibility:1.0  p1:0.00020423166657157154 p2:0.003978243435690031  alpha:0.0041824751022616026  w:tensor(1., dtype=torch.float64)
+log EI value: -2.378566635657279
+Local minimum found!
+Starting local search on configuration: <2.0> with acq. val. 0.00367214232807231
+Best neighbour: <4.0> with acq. val. 0.0041824751022616026
+Best neighbour: <4.0> with acq. val. 0.0041824751022616026
+obj mean:3333782272.0  obj std:5163630080.0 
+f*:-0.6455624103546143  mu:-0.6460583437926948  sigma:0.009979828396732072  feasibility:1.0  p1:0.00020423166657157154 p2:0.003978243435690031  alpha:0.0041824751022616026  w:tensor(1., dtype=torch.float64)
+log EI value: -2.378566635657279
+Local minimum found!
+Starting local search on configuration: <8.0> with acq. val. 0.0026728959859183767
+Best neighbour: <4.0> with acq. val. 0.004182475102261374
+Best neighbour: <4.0> with acq. val. 0.0041824751022616026
+obj mean:3333782272.0  obj std:5163630080.0 
+f*:-0.6455624103546143  mu:-0.6460583437926948  sigma:0.009979828396732072  feasibility:1.0  p1:0.00020423166657157154 p2:0.003978243435690031  alpha:0.0041824751022616026  w:tensor(1., dtype=torch.float64)
+log EI value: -2.378566635657279
+Local minimum found!
+Starting local search on configuration: <16.0> with acq. val. 0.0
+Best neighbour: <8.0> with acq. val. 0.0026728959859183767
+Best neighbour: <4.0> with acq. val. 0.004182475102261374
+Best neighbour: <4.0> with acq. val. 0.0041824751022616026
+obj mean:3333782272.0  obj std:5163630080.0 
+f*:-0.6455624103546143  mu:-0.6460583437926948  sigma:0.009979828396732072  feasibility:1.0  p1:0.00020423166657157154 p2:0.003978243435690031  alpha:0.0041824751022616026  w:tensor(1., dtype=torch.float64)
+log EI value: -2.378566635657279
+Local minimum found!
+Starting local search on configuration: <32.0> with acq. val. 0.0
+Best neighbour: <32.0> with acq. val. 0.0
+obj mean:3333782272.0  obj std:5163630080.0 
+f*:-0.6455624103546143  mu:1.2909822368027524  sigma:0.009999731852503874  feasibility:1.0  p1:-0.0 p2:0.0  alpha:0.0  w:tensor(1., dtype=torch.float64)
+log EI value: -inf
+Local minimum found!
+Starting local search on configuration: <8.0> with acq. val. 0.0026728959859183767
+Best neighbour: <4.0> with acq. val. 0.004182475102261374
+Best neighbour: <4.0> with acq. val. 0.0041824751022616026
+obj mean:3333782272.0  obj std:5163630080.0 
+f*:-0.6455624103546143  mu:-0.6460583437926948  sigma:0.009979828396732072  feasibility:1.0  p1:0.00020423166657157154 p2:0.003978243435690031  alpha:0.0041824751022616026  w:tensor(1., dtype=torch.float64)
+log EI value: -2.378566635657279
+Local minimum found!
+Starting local search on configuration: <8.0> with acq. val. 0.0026728959859183767
+Best neighbour: <4.0> with acq. val. 0.004182475102261374
+Best neighbour: <4.0> with acq. val. 0.0041824751022616026
+obj mean:3333782272.0  obj std:5163630080.0 
+f*:-0.6455624103546143  mu:-0.6460583437926948  sigma:0.009979828396732072  feasibility:1.0  p1:0.00020423166657157154 p2:0.003978243435690031  alpha:0.0041824751022616026  w:tensor(1., dtype=torch.float64)
+log EI value: -2.378566635657279
+Local minimum found!
+Starting local search on configuration: <4.0> with acq. val. 0.0041824751022616026
+Best neighbour: <4.0> with acq. val. 0.0041824751022616026
+obj mean:3333782272.0  obj std:5163630080.0 
+f*:-0.6455624103546143  mu:-0.6460583437926948  sigma:0.009979828396732072  feasibility:1.0  p1:0.00020423166657157154 p2:0.003978243435690031  alpha:0.0041824751022616026  w:tensor(1., dtype=torch.float64)
+log EI value: -2.378566635657279
+Local minimum found!
+Multi-start LS time     0.0514 sec
+Best found configuration: <4.0>
+obj mean:3333782272.0  obj std:5163630080.0 
+f*:-0.6455624103546143  mu:-0.6460583437926948  sigma:0.009979828396732072  feasibility:1.0  p1:0.00020423166657157154 p2:0.003978243435690031  alpha:0.0041824751022616026  w:tensor(1., dtype=torch.float64)
+log EI value: -2.378566635657279
+Local search time     0.0584 sec
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha256', '--par_factor', '4']
+
+Time elapsed:  672862
+par_factor,compute_time,timestamp
+4,672862,12960
+
+Black box function time     2.6264 sec
+Total iteration time     2.8725 sec
+Starting optimization iteration: 2 sample no: 7
+lengthscales:
+0.34166740489843833
+kernel variance: 2.2273072474243265
+noise variance: 9.999999747378752e-05
+End of training - Time       0.04 sec
+Model fitting time     0.0417 sec
+Total RS time     0.0001 sec
+Optimization function time     0.0028 sec
+Starting local search on configuration: <2.0> with acq. val. 0.0036750879446016903
+Best neighbour: <2.0> with acq. val. 0.0036750879446016903
+obj mean:2857623808.0  obj std:4879172096.0 
+f*:-0.585608959197998  mu:-0.5850711596933273  sigma:0.009991091854969327  feasibility:1.0  p1:-0.0003026678066419951 p2:0.003977755751243686  alpha:0.0036750879446016908  w:tensor(0.99999999999999988898, dtype=torch.float64)
+log EI value: -2.4347322638183617
+Local minimum found!
+Starting local search on configuration: <4.0> with acq. val. 0.002867107723501491
+Best neighbour: <2.0> with acq. val. 0.0036750879445924204
+Best neighbour: <2.0> with acq. val. 0.0036750879446016903
+obj mean:2857623808.0  obj std:4879172096.0 
+f*:-0.585608959197998  mu:-0.5850711596933273  sigma:0.009991091854969327  feasibility:1.0  p1:-0.0003026678066419951 p2:0.003977755751243686  alpha:0.0036750879446016908  w:tensor(0.99999999999999988898, dtype=torch.float64)
+log EI value: -2.4347322638183617
+Local minimum found!
+Starting local search on configuration: <8.0> with acq. val. 0.0026779402943024944
+Best neighbour: <4.0> with acq. val. 0.002867107723501042
+Best neighbour: <2.0> with acq. val. 0.0036750879445924204
+Best neighbour: <2.0> with acq. val. 0.0036750879446016903
+obj mean:2857623808.0  obj std:4879172096.0 
+f*:-0.585608959197998  mu:-0.5850711596933273  sigma:0.009991091854969327  feasibility:1.0  p1:-0.0003026678066419951 p2:0.003977755751243686  alpha:0.0036750879446016908  w:tensor(0.99999999999999988898, dtype=torch.float64)
+log EI value: -2.4347322638183617
+Local minimum found!
+Starting local search on configuration: <16.0> with acq. val. 0.0
+Best neighbour: <8.0> with acq. val. 0.0026779402943020647
+Best neighbour: <4.0> with acq. val. 0.002867107723501042
+Best neighbour: <2.0> with acq. val. 0.0036750879445924204
+Best neighbour: <2.0> with acq. val. 0.0036750879446016903
+obj mean:2857623808.0  obj std:4879172096.0 
+f*:-0.585608959197998  mu:-0.5850711596933273  sigma:0.009991091854969327  feasibility:1.0  p1:-0.0003026678066419951 p2:0.003977755751243686  alpha:0.0036750879446016908  w:tensor(0.99999999999999988898, dtype=torch.float64)
+log EI value: -2.4347322638183617
+Local minimum found!
+Starting local search on configuration: <32.0> with acq. val. 0.0
+Best neighbour: <32.0> with acq. val. 0.0
+obj mean:2857623808.0  obj std:4879172096.0 
+f*:-0.585608959197998  mu:1.4638374477650828  sigma:0.00999975398703424  feasibility:1.0  p1:-0.0 p2:0.0  alpha:0.0  w:tensor(0.99999999999999988898, dtype=torch.float64)
+log EI value: -inf
+Local minimum found!
+Starting local search on configuration: <8.0> with acq. val. 0.0026779402943024944
+Best neighbour: <4.0> with acq. val. 0.002867107723501042
+Best neighbour: <2.0> with acq. val. 0.0036750879445924204
+Best neighbour: <2.0> with acq. val. 0.0036750879446016903
+obj mean:2857623808.0  obj std:4879172096.0 
+f*:-0.585608959197998  mu:-0.5850711596933273  sigma:0.009991091854969327  feasibility:1.0  p1:-0.0003026678066419951 p2:0.003977755751243686  alpha:0.0036750879446016908  w:tensor(0.99999999999999988898, dtype=torch.float64)
+log EI value: -2.4347322638183617
+Local minimum found!
+Starting local search on configuration: <8.0> with acq. val. 0.0026779402943024944
+Best neighbour: <4.0> with acq. val. 0.002867107723501042
+Best neighbour: <2.0> with acq. val. 0.0036750879445924204
+Best neighbour: <2.0> with acq. val. 0.0036750879446016903
+obj mean:2857623808.0  obj std:4879172096.0 
+f*:-0.585608959197998  mu:-0.5850711596933273  sigma:0.009991091854969327  feasibility:1.0  p1:-0.0003026678066419951 p2:0.003977755751243686  alpha:0.0036750879446016908  w:tensor(0.99999999999999988898, dtype=torch.float64)
+log EI value: -2.4347322638183617
+Local minimum found!
+Starting local search on configuration: <4.0> with acq. val. 0.002867107723501491
+Best neighbour: <2.0> with acq. val. 0.0036750879445924204
+Best neighbour: <2.0> with acq. val. 0.0036750879446016903
+obj mean:2857623808.0  obj std:4879172096.0 
+f*:-0.585608959197998  mu:-0.5850711596933273  sigma:0.009991091854969327  feasibility:1.0  p1:-0.0003026678066419951 p2:0.003977755751243686  alpha:0.0036750879446016908  w:tensor(0.99999999999999988898, dtype=torch.float64)
+log EI value: -2.4347322638183617
+Local minimum found!
+Multi-start LS time     0.0590 sec
+Best found configuration: <2.0>
+obj mean:2857623808.0  obj std:4879172096.0 
+f*:-0.585608959197998  mu:-0.5850711596933273  sigma:0.009991091854969327  feasibility:1.0  p1:-0.0003026678066419951 p2:0.003977755751243686  alpha:0.0036750879446016908  w:tensor(0.99999999999999988898, dtype=torch.float64)
+log EI value: -2.4347322638183617
+Local search time     0.0658 sec
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha256', '--par_factor', '2']
+
+Time elapsed:  1345295
+par_factor,compute_time,timestamp
+2,1345295,15716
+
+Black box function time     2.6489 sec
+Total iteration time     2.7566 sec
+Starting optimization iteration: 3 sample no: 8
+lengthscales:
+0.33876038445595413
+kernel variance: 2.401762611911889
+noise variance: 9.999999747378752e-05
+End of training - Time       0.04 sec
+Model fitting time     0.0386 sec
+Total RS time     0.0001 sec
+Optimization function time     0.0025 sec
+Starting local search on configuration: <4.0> with acq. val. 0.002858774320455574
+Best neighbour: <4.0> with acq. val. 0.002858774320468111
+obj mean:2500589056.0  obj std:4628737024.0 
+f*:-0.5401586294174194  mu:-0.5403384971270705  sigma:0.007065333798685232  feasibility:1.0  p1:4.029402736066487e-05 p2:0.0028184802930949094  alpha:0.002858774320455574  w:tensor(1., dtype=torch.float64)
+log EI value: -2.5438201276953043
+Local minimum found!
+Starting local search on configuration: <8.0> with acq. val. 0.0026824146102469968
+Best neighbour: <4.0> with acq. val. 0.0028587743204544535
+Best neighbour: <4.0> with acq. val. 0.002858774320468111
+obj mean:2500589056.0  obj std:4628737024.0 
+f*:-0.5401586294174194  mu:-0.5403384971270705  sigma:0.007065333798685232  feasibility:1.0  p1:4.029402736066487e-05 p2:0.0028184802930949094  alpha:0.002858774320455574  w:tensor(1., dtype=torch.float64)
+log EI value: -2.5438201276953043
+Local minimum found!
+Starting local search on configuration: <2.0> with acq. val. 0.002588234208213247
+Best neighbour: <4.0> with acq. val. 0.002858774320468111
+Best neighbour: <4.0> with acq. val. 0.002858774320468111
+obj mean:2500589056.0  obj std:4628737024.0 
+f*:-0.5401586294174194  mu:-0.5403384971270705  sigma:0.007065333798685232  feasibility:1.0  p1:4.029402736066487e-05 p2:0.0028184802930949094  alpha:0.002858774320455574  w:tensor(1., dtype=torch.float64)
+log EI value: -2.5438201276953043
+Local minimum found!
+Starting local search on configuration: <16.0> with acq. val. 0.0
+Best neighbour: <8.0> with acq. val. 0.0026824146102469968
+Best neighbour: <4.0> with acq. val. 0.0028587743204544535
+Best neighbour: <4.0> with acq. val. 0.002858774320468111
+obj mean:2500589056.0  obj std:4628737024.0 
+f*:-0.5401586294174194  mu:-0.5403384971270705  sigma:0.007065333798685232  feasibility:1.0  p1:4.029402736066487e-05 p2:0.0028184802930949094  alpha:0.002858774320455574  w:tensor(1., dtype=torch.float64)
+log EI value: -2.5438201276953043
+Local minimum found!
+Starting local search on configuration: <32.0> with acq. val. 0.0
+Best neighbour: <32.0> with acq. val. 0.0
+obj mean:2500589056.0  obj std:4628737024.0 
+f*:-0.5401586294174194  mu:1.6201721964389266  sigma:0.009999772676637892  feasibility:1.0  p1:-0.0 p2:0.0  alpha:0.0  w:tensor(1., dtype=torch.float64)
+log EI value: -inf
+Local minimum found!
+Starting local search on configuration: <8.0> with acq. val. 0.0026824146102469968
+Best neighbour: <4.0> with acq. val. 0.0028587743204544535
+Best neighbour: <4.0> with acq. val. 0.002858774320468111
+obj mean:2500589056.0  obj std:4628737024.0 
+f*:-0.5401586294174194  mu:-0.5403384971270705  sigma:0.007065333798685232  feasibility:1.0  p1:4.029402736066487e-05 p2:0.0028184802930949094  alpha:0.002858774320455574  w:tensor(1., dtype=torch.float64)
+log EI value: -2.5438201276953043
+Local minimum found!
+Starting local search on configuration: <8.0> with acq. val. 0.0026824146102469968
+Best neighbour: <4.0> with acq. val. 0.0028587743204544535
+Best neighbour: <4.0> with acq. val. 0.002858774320468111
+obj mean:2500589056.0  obj std:4628737024.0 
+f*:-0.5401586294174194  mu:-0.5403384971270705  sigma:0.007065333798685232  feasibility:1.0  p1:4.029402736066487e-05 p2:0.0028184802930949094  alpha:0.002858774320455574  w:tensor(1., dtype=torch.float64)
+log EI value: -2.5438201276953043
+Local minimum found!
+Starting local search on configuration: <4.0> with acq. val. 0.002858774320455574
+Best neighbour: <4.0> with acq. val. 0.002858774320468111
+obj mean:2500589056.0  obj std:4628737024.0 
+f*:-0.5401586294174194  mu:-0.5403384971270705  sigma:0.007065333798685232  feasibility:1.0  p1:4.029402736066487e-05 p2:0.0028184802930949094  alpha:0.002858774320455574  w:tensor(1., dtype=torch.float64)
+log EI value: -2.5438201276953043
+Local minimum found!
+Multi-start LS time     0.1388 sec
+Best found configuration: <4.0>
+obj mean:2500589056.0  obj std:4628737024.0 
+f*:-0.5401586294174194  mu:-0.5403384971270705  sigma:0.007065333798685232  feasibility:1.0  p1:4.029402736066487e-05 p2:0.0028184802930949094  alpha:0.002858774320455574  w:tensor(1., dtype=torch.float64)
+log EI value: -2.5438201276953043
+Local search time     0.1453 sec
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha256', '--par_factor', '4']
+
+Time elapsed:  672862
+par_factor,compute_time,timestamp
+4,672862,18458
+
+Black box function time     2.5580 sec
+Total iteration time     2.7421 sec
+End of BO phase - Time     8.3714 sec
+End of Bayesian Optimization
+Total script time      18.46 sec
+
+tensor([[ 8.],
+        [ 2.],
+        [ 4.],
+        [ 8.],
+        [16.],
+        [32.],
+        [ 4.],
+        [ 2.],
+        [ 4.]], dtype=torch.float64)
+tensor([[3.36869000000000000000e+05],
+        [1.34529500000000000000e+06],
+        [6.72862000000000000000e+05],
+        [3.36869000000000000000e+05],
+        [1.00000000000000000000e+10],
+        [1.00000000000000000000e+10],
+        [6.72862000000000000000e+05],
+        [1.34529500000000000000e+06],
+        [6.72862000000000000000e+05]])
+tensor([ 1335.,  3961.,  6570.,  9146.,  9499., 10086., 12960., 15716., 18458.])
+tensor([], dtype=torch.bool)
+
+Best point found: 
+tensor([[8.]], dtype=torch.float64)
+tensor([[336869.]])
+tensor([1335.])
+tensor([], dtype=torch.bool)
+
+End of HyperMapper
+End of known constraints
+application_name: comal
+optimization_objectives: ['compute_time']
+optimization_iterations: 3
+optimization_method: bayesian_optimization
+input_parameters: {'par_factor': {'parameter_type': 'ordinal', 'values': [2, 4, 8, 16, 32], 'parameter_default': 8, 'prior': 'uniform', 'prior_parameters': []}}
+predict_noiseless: True
+log_file: ./taco.log
+acquisition_function: EI
+acquisition_function_optimizer: local_search
+allow_duplicate_samples: True
+design_of_experiment: {'doe_type': 'random sampling', 'number_of_samples': 10, 'allow_repetitions': False}
+epsilon_greedy_threshold: 0
+evolution_crossover: False
+evolution_generations: 150
+evolution_population_size: 50
+exploration_augmentation: 0.0001
+feasible_output: {'false_value': 'False', 'name': 'Valid', 'true_value': 'True', 'enable_feasible_predictor': False, 'feasibility_threshold': 0.1}
+baco_mode: {'mode': 'default'}
+lengthscale_prior: {'name': 'none', 'parameters': [1.3, 0.1]}
+local_search_from_best: True
+local_search_improvement_threshold: 0
+local_search_random_points: 30000
+local_search_starting_points: 10
+local_search_step_size: 0.03
+log_acq_value: False
+log_transform_output: False
+model_good_quantile: 0.05
+model_weight: 10
+models: {'model': 'gaussian_process', 'bootstrap': True, 'max_features': 0.5, 'min_samples_split': 2, 'number_of_trees': 200, 'use_all_data_to_fit_mean': False, 'use_all_data_to_fit_variance': False}
+multistart_hyperparameter_optimization: False
+hyperparameter_optimization_iterations: 5
+GP_model: botorch
+mutation_rate: 1
+naive_cot_rs: False
+noise: True
+noise_prior: {'name': 'none'}
+normalize_inputs: True
+number_of_repetitions: 1
+objective_value_target: -9999
+output_data_file: output_samples.csv
+outputscale_prior: {'name': 'none'}
+prior_estimation_file: samples.csv
+prior_estimation_quantile: 0.1
+prior_floor: 1e-06
+prior_limit_estimation_points: 10000
+regularize_evolution: False
+reoptimise_hyperparameters_interval: 1
+resume_optimization: False
+resume_optimization_file: output_samples.csv
+reuse_gp_hyperparameters: False
+run_directory: .
+standardize_objectives: True
+time_budget: -1
+timestamp: Timestamp
+use_STGP: True
+
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha', '--par_factor', '8']
+
+Time elapsed:  88132342
+['/home/rubensl/Documents/repos/comal/target/release/comal', '-d', 'tensor4_mha', '--par_factor', '2']
+

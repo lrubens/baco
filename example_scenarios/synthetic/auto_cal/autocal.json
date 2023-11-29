@@ -1,32 +1,36 @@
 {
     "application_name": "comal",
     "optimization_objectives": ["diff1", "diff2", "diff3", "diff4", "diff5", "diff6", "diff7", "diff8", "diff9", "diff10"],
+    "design_of_experiment": {
+        "doe_type": "random sampling",
+        "number_of_samples": 100
+    },
     "input_parameters" : {
         "fiberlookup_initial": {
             "parameter_type" : "integer",
-            "values" : [0, 20],
-            "parameter_default" : 0
+            "values" : [0, 1000],
+            "parameter_default" : 10
         }
         ,
         "fiberlookup_latency": {
             "parameter_type" : "integer",
-            "values" : [0, 20],
-            "parameter_default" : 1
+            "values" : [0, 1000],
+            "parameter_default" : 10
         },
         "fiberlookup_stop_latency": {
             "parameter_type" : "integer",
-            "values" : [0, 50],
-            "parameter_default" : 0
+            "values" : [0, 1000],
+            "parameter_default" : 20
         },
         "fiberlookup_miss_latency": {
             "parameter_type" : "integer",
-            "values" : [0, 50],
-            "parameter_default" : 0
+            "values" : [0, 1000],
+            "parameter_default" : 20
         },
         "fiberlookup_starting": {
             "parameter_type" : "integer",
-            "values" : [0, 400],
-            "parameter_default" : 0
+            "values" : [0, 1000],
+            "parameter_default" : 10
         },
         "incr_type": {
             "parameter_type" : "integer",
@@ -35,13 +39,13 @@
         },
         "fiberlookup_ii": {
             "parameter_type" : "integer",
-            "values" : [1, 10],
-            "parameter_default" : 1
+            "values" : [1, 100],
+            "parameter_default" : 20
         },
         "fiberlookup_numerator_factor": {
             "parameter_type" : "integer",
-            "values" : [0, 100],
-            "parameter_default" : 50
+            "values" : [0, 200],
+            "parameter_default" : 100
         },
         "fiberlookup_denominator_factor": {
             "parameter_type" : "integer",
@@ -50,12 +54,20 @@
         }
     },
     "predict_noiseless": true,
-    "optimization_method": "opentuner",
+    "models" : {
+      "model" : "gaussian_process"
+    },
+    "optimization_method": "bayesian_optimization",
     "acquisition_function": "EI",
     "allow_duplicate_samples": false,
-    "optimization_iterations": 5000,
+    "optimization_iterations": 4,
     "epsilon_greedy_threshold": 0.0,
-    "resume_optimization": true,
-    "resume_optimization_file": "comal_output_samples.csv",
+    "lengthscale_prior": {
+        "name": "gamma",
+        "parameters": [
+            1,
+            0.3
+        ]
+    },
     "log_file": "autocal.log"
 }

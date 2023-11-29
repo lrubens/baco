@@ -9,12 +9,25 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from matplotlib.lines import Line2D
+import scienceplots
 
 if not os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')) in sys.path:
     sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 from baco.param import space
 from baco.util.logging import Logger
 from baco.util.file import read_settings_file, add_path
+
+import seaborn as sns
+colors = sns.color_palette(palette='tab20')
+
+# import matplotlib as mpl
+# mpl.rcParams.update(mpl.rcParamsDefault)
+# mpl.rcParams['pdf.fonttype'] = 10
+# mpl.rcParams['ps.fonttype'] = 10
+plt.style.use(['science'])
+import matplotlib
+matplotlib.rc('xtick', labelsize=15) 
+matplotlib.rc('ytick', labelsize=15) 
 
 
 def load_data(file):
@@ -25,7 +38,17 @@ def load_data(file):
         data_array[key] = data[key].tolist()
     return data_array
 
+import tikzplotlib
 
+def tikzplotlib_fix_ncols(obj):
+    """
+    workaround for matplotlib 3.6 renamed legend's _ncol to _ncols, which breaks tikzplotlib
+    """
+    if hasattr(obj, "_ncols"):
+        obj._ncol = obj._ncols
+    for child in obj.get_children():
+        tikzplotlib_fix_ncols(child)
+        
 def plot_regret(
         settings_file,
         data_dirs,
@@ -102,23 +125,25 @@ def plot_regret(
         regrets[data_dir] = np.array(dir_regrets)
         total_evaluations[data_dir] = list(range(min_dir_iters))
 
-    mpl.rcParams.update({"font.size": 40})
-    plt.rcParams["figure.figsize"] = [16, 12]
+    # mpl.rcParams.update({"font.size": 40})
+    plt.rcParams["figure.figsize"] = [9, 4]
     linewidth = 2
     fig, ax = plt.subplots()
-    colors = [
-        "blue",
-        "green",
-        "red",
-        "magenta",
-        "yellow",
-        "purple",
-        "orange",
-        "cyan",
-        "gray",
-        "violet",
-        "lime",
-    ]
+    # ax.tick_params(axis='x', labelsize=10)
+    # colors = [
+    #     colors[1],
+    #     "blue",
+    #     "green",
+    #     "red",
+    #     "magenta",
+    #     "yellow",
+    #     "purple",
+    #     "orange",
+    #     "cyan",
+    #     "gray",
+    #     "violet",
+    #     "lime",
+    # ]
     legend_elements = []
     if expert_configuration is not None:
         expert_data = [expert_configuration] * max_iters
@@ -144,7 +169,8 @@ def plot_regret(
             lower_bound.append(plot_means[idx] - plot_stds[idx])
             upper_bound.append(plot_means[idx] + plot_stds[idx])
 
-        next_color = colors[key_idx % len(colors)]
+        # next_color = colors[key_idx % len(colors)]
+        next_color = colors[1]
         x_values = np.array(total_evaluations[key]) + 1
         ax.plot(x_values, plot_means, color=next_color, linewidth=linewidth)
         ax.fill_between(
@@ -160,9 +186,9 @@ def plot_regret(
         else:
             label = labels[key_idx]
 
-        legend_elements.append(
-            Line2D([0], [0], color=next_color, label=label, linewidth=linewidth)
-        )
+        # legend_elements.append(
+        #     Line2D([0], [0], color=next_color, linewidth=linewidth)
+        # )
 
     if expert_configuration is not None:
         legend_elements.append(
@@ -193,15 +219,18 @@ def plot_regret(
 
     rows = np.ceil(len(legend_elements) / ncol)
     height = 1 + (0.03) * rows
-    ax.legend(
-        handles=legend_elements,
-        loc="center",
-        bbox_to_anchor=(0.5, height),
-        fancybox=True,
-        shadow=True,
-        ncol=ncol,
-        bbox_transform=fig.transFigure,
-    )
+    # ax.legend(
+    #     handles=legend_elements,
+    #     loc="center",
+    #     bbox_to_anchor=(0.5, height),
+    #     fancybox=True,
+    #     shadow=True,
+    #     ncol=ncol,
+    #     bbox_transform=fig.transFigure,
+    # )
+    # import tikzplotlib
+    # tikzplotlib.save("calibration.tex")
+
 
     if x_label is None:
         x_label = "Number of Evaluations"
@@ -210,12 +239,12 @@ def plot_regret(
             y_label = "Log Regret"
         else:
             y_label = "Regret"
-    ax.set_xlabel(x_label)
-    ax.set_ylabel(y_label)
+    ax.set_xlabel(x_label, fontsize=22)
+    ax.set_ylabel(y_label, fontsize=22)
 
     if title is None:
         title = settings["application_name"]
-    ax.set_title(title, y=1)
+    ax.set_title(title, y=1, fontsize=24)
 
     ax.set_xlim(
         1,
@@ -227,7 +256,11 @@ def plot_regret(
         os.makedirs(out_dir, exist_ok=True)
     if outfile is None:
         outfile = out_dir + application_name + "_regret.pdf"
-    fig.savefig(outfile, bbox_inches="tight", dpi=300)
+    fig.savefig(outfile, bbox_inches="tight", dpi=600)
+
+    # tikzplotlib_fix_ncols(fig)
+    # tikzplotlib.save("test.tex")
+
     fig.clear()
 
     return legend_elements
@@ -300,6 +333,7 @@ def main():
         show_doe=args.show_doe,
         expert_configuration=args.expert_configuration,
     )
+
 
 
 if __name__ == "__main__":
