@@ -10,12 +10,18 @@ from collections import OrderedDict
 import time
 import subprocess
 import json
+import argparse
 
 
 sys.path.append(".")
 from baco.run import optimize  # noqa
 home = str(Path.home())
 best_diff = 1000000.0
+
+config_options = {
+    "rust_binary": "",
+    "tmp_config_path": "",
+}
 
 
 def autocal(X):
@@ -31,9 +37,10 @@ def autocal(X):
     fiberlookup_miss_latency = int(X["fiberlookup_miss_latency"])
 
     # TODO: Change to user input maybe
-    rust_binary = "/home/rubensl/Documents/repos/comal/target/release/deps/comal-c5d2583e53b91909"
+    rust_binary = config_options["rust_binary"]
+    node_config_path = config_options["tmp_config_path"]
 
-    with open(home + "/sam_config.toml", "r") as f:
+    with open(home + node_config_path, "r") as f:
         config = toml.load(f)
 
     config["sam_config"]["fiberlookup_latency"] = fiberlookup_latency
@@ -46,15 +53,15 @@ def autocal(X):
     config["sam_config"]["fiberlookup_miss_latency"] = fiberlookup_miss_latency
     config["sam_config"]["incr_type"] = incr_type
 
-    with open(home + "/sam_config.toml", "w") as f:
+    with open(home + node_config_path, "w") as f:
         toml.dump(config, f)
 
-    # cmd = rust_binary + " -d " + dataset_name + " --par_factor " + str(x1.astype(np.int32))
-    cmd = [rust_binary, "--nocapture", "rd_scanner",
-           "--test-threads=1"]
+    cmd = [rust_binary, "--nocapture", "rd_scanner"]
 
     proc = subprocess.run(cmd, universal_newlines=True, stdout=subprocess.PIPE)
 
+    actual_cycles = [27, 54, 93, 698, 36, 30, 93, 422, 223, 224]
+    
     diff_lst = []
 
     # TODO: Hacky way of getting diffs, fix
@@ -76,23 +83,20 @@ def autocal(X):
     print("Best diff: ", best_diff)
     
 
-    # TODO: Maybe add in unknown constraints to output
     return {
         "diff1": avg_diff,
-        # "diff1": float(diff_lst[0]),
-        # "diff2": float(diff_lst[1]),
-        # "diff3": float(diff_lst[2]),
-        # "diff4": float(diff_lst[3]),
-        # "diff5": float(diff_lst[4]),
-        # "diff6": float(diff_lst[5]),
-        # "diff7": float(diff_lst[6]),
-        # "diff8": float(diff_lst[7]),
-        # "diff9": float(diff_lst[8]),
-        # "diff10": float(diff_lst[9]),
     }
 
 
 def main():
+
+    parser = argparse.ArgumentParser(prog="Automated calibration")
+    parser.add_argument('-b', 'rust_binary')
+    parser.add_argument('-f', 'config_path')
+    args = parser.parse_args()
+    config_options["rust_binary"] = args.rust_binary
+    config_options["tmp_config_path"] = args.tmp_config_path
+
     parameters_file = "example_scenarios/synthetic/auto_cal/autocal.json"
     optimize(parameters_file, autocal)
     print("End of known constraints")
